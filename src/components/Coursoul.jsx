@@ -17,7 +17,7 @@ function Coursoul() {
                   <span>Amazon Christian Academy</span>
                 
                 </h1>
-                <h4 className='lg:text-xl text-lg  text-light  mt-3 font-bold'>We Strive to Prepare our Learner for Life Both Globally and Eternally.</h4>
+                <h4 className='lg:text-xl text-lg  text-light  mt-3 font-bold'>Preparing Students for Life Both Globally and Eternally.</h4>
               </div>
             </div>
           </div>

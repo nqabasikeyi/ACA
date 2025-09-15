@@ -1,0 +1,13 @@
+# netlify.toml for a React SPA
+
+[build]
+  # The folder where your production build is generated
+  publish = "build"
+  # The command to build your site
+  command = "npm run build"
+
+[[redirects]]
+  # Redirect all routes to index.html so React Router can handle them
+  from = "/*"
+  to = "/index.html"
+  status = 200

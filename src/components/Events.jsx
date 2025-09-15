@@ -2,61 +2,61 @@ import React, { useState } from 'react';
 
 const eventsData = [
   {
-    category: "Primary Events",
+    category: "September Events",
     events: [
       {
         title: "Math Wizard Competition",
-        date: "2024-08-15",
+        date: "2025-09-15",
         description: "An exciting competition where students showcase their mathematical skills through fun puzzles and challenges."
       },
       {
         title: "Art Fair",
-        date: "2024-09-10",
+        date: "2025-09-22",
         description: "A creative event where students display their artwork, including paintings, drawings, and crafts."
       },
       {
         title: "Physical Fitness Week",
-        date: "2024-10-05",
+        date: "2025-09-28",
         description: "A week dedicated to various physical activities and sports to promote health and fitness among students."
       }
     ]
   },
   {
-    category: "Secondary Events",
+    category: "October Events",
     events: [
       {
-        title: "Science Fair",
-        date: "2024-11-20",
-        description: "A fair where students present their science projects and experiments, showcasing their understanding and innovation."
+        title: "Zimsec Examinations",
+        date: "2025-10-14",
+        description: "O Level Examnations begin for all students in Form 4"
       },
       {
-        title: "Computer Science Quiz",
-        date: "2024-12-15",
+        title: "Spelling Bee Competition",
+        date: "2024-10-15",
         description: "A quiz competition focused on computer science topics, including programming, algorithms, and tech trivia."
       },
       {
-        title: "Social Studies Debate",
-        date: "2025-01-10",
-        description: "A debate competition where students discuss and argue on various social studies topics, enhancing their public speaking and critical thinking skills."
+        title: "Exeat Holiday",
+        date: "2025-10-28",
+        description: "Form 1 to Form 3 Exeat Holiday of 3 days, coming back on 2 September 2025"
       }
     ]
   },
   {
-    category: "Senior Secondary Events",
+    category: "November Events",
     events: [
       {
         title: "Science Olympiad",
-        date: "2025-02-25",
+        date: "2025-11-7",
         description: "An advanced competition covering physics, chemistry, and biology, aimed at encouraging scientific inquiry and excellence."
       },
       {
-        title: "Commerce Fair",
-        date: "2025-03-15",
-        description: "A fair showcasing projects and presentations related to accountancy, business studies, and economics."
+        title: "Internal Examinations",
+        date: "2025-11-16",
+        description: "Form 1 to Form 3 Internal Examinations for all subjects"
       },
       {
-        title: "Mathematics Challenge",
-        date: "2025-04-20",
+        title: "Math Challenge",
+        date: "2025-04-21",
         description: "A challenging event featuring advanced mathematical problems and puzzles designed to test and improve students' mathematical skills."
       }
     ]

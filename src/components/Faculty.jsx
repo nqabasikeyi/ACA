@@ -1,10 +1,10 @@
-
+import {eng, bes, her, nde, pes, acc, bio, bursar, tg, principal, geo } from "../assets/index";
 
 const aboutData = [
   {
     name: "Mr N K Kuchena",
     description: "Principal",
-    image: "https://t4.ftcdn.net/jpg/03/13/37/31/360_F_313373132_b9Az7XaGLRvSLHXlINXBIGPMIOLok8ZB.jpg", 
+    image: principal, 
     quote: "Welcome to our school community! We are dedicated to fostering a nurturing environment that promotes academic and personal growth. Join us in making a positive impact.",
    
   },
@@ -14,6 +14,20 @@ const aboutData = [
     image: "https://t4.ftcdn.net/jpg/03/13/37/31/360_F_313373132_b9Az7XaGLRvSLHXlINXBIGPMIOLok8ZB.jpg", 
     quote: "Together, we can achieve greatness. Let’s work hand-in-hand to shape the future and build a thriving school environment.",
    
+  },
+  {
+    name: "Mrs Z Nyoni",
+    description: "School Bursar",
+    image: bursar, 
+    quote: "Managing our school’s resources responsibly ensures that every student has the tools they need to succeed. Together, we build a foundation of trust, transparency, and opportunity.",
+   
+  },
+     {
+    name: "Min T Dlamini",
+    description: "Bible Teacher",
+    image: "https://t4.ftcdn.net/jpg/03/13/37/31/360_F_313373132_b9Az7XaGLRvSLHXlINXBIGPMIOLok8ZB.jpg", 
+    quote: "Through the study of the Bible, we learn values that guide our hearts and minds. Let us explore its teachings to inspire faith, character, and wisdom in everyday life"
+    
   },
   {
     name: "Mrs P Ndlovu",
@@ -32,14 +46,14 @@ const aboutData = [
    {
     name: "Mrs S Jamela",
     description: "Business Enterprise Skills Teacher",
-    image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
+    image: bes, 
     quote: "Enterprise sparks innovation and opportunity. Let’s build skills to create, lead, and succeed in business.",
     
   },
   {
     name: "Mr F Mhletshwa",
     description: "Biology Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: bio, 
     quote: "Biology is the study of life in all its forms. Let’s explore the wonders of nature and understand the living world around us",
     
   },
@@ -60,49 +74,50 @@ const aboutData = [
   {
     name: "Mrs K Ncube",
     description: "Heritage Studies Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: her, 
     quote: "Heritage connects us to our roots and guides our future. Let us celebrate who we are and where we come from.",
     
   },
   {
     name: "Mrs M M Munanga",
     description: "PES Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: pes, 
     quote: "Through movement and teamwork, PES builds strong bodies and stronger characters. Let us grow in strength, skill, and spirit.",
     
   },
   {
     name: "Mr B Khabi",
     description: "Geography Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: geo, 
     quote: "Geography helps us understand the world we live in. Let’s explore landscapes, cultures, and the forces that shape our planet.",
     
   },
   {
     name: "Miss P Zikhali",
     description: "Accounts Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: acc, 
     quote: "Accounting is the language of business. Let’s master the numbers that drive decisions and growth.",
     
   },
   {
     name: "Mr S Jamela",
     description: "IsiNdebele Teacher",
-    image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
+    image: nde, 
     quote: "IsiNdebele liphila emoyeni wobuntu bethu. Masilondoloze ubuhle bayo njalo sabelane ngelukuluku kwayo ngokuqhosha.",
     
   },
   {
     name: "Mrs E Khabi",
     description: "English Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: eng, 
     quote: "English is the bridge to communication and expression. Let’s master it together to share our voices with the world.",
     
   },
+ 
   {
     name: "Miss Y Rodgers",
     description: "Technical Drawing Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: tg, 
     quote: "Technical Drawing turns imagination into precision. Let’s design the structures that bring ideas to life",
     
   },

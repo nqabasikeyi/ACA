@@ -15,3 +15,21 @@ export {default as showcase8} from './showcase8.jpg';
 export {default as showcase9} from './showcase9.jpg'; 
 export {default as showcase10} from './showcase10.jpg'; 
 export {default as showcase11} from './showcase11.jpg'; 
+export {default as showcase12} from './showcase12.jpg'; 
+export {default as showcase13} from './showcase13.jpg'; 
+export {default as showcase14} from './showcase14.jpg'; 
+export {default as showcase15} from './showcase15.jpg'; 
+
+
+export {default as bes} from './bes.jpg';
+export {default as tg} from './tg.jpg';
+export {default as acc} from './acc.jpg';
+export {default as pes} from './pes.jpg';   
+export {default as bio} from './bio.jpg'; 
+export {default as nde} from './nde.jpg'; 
+export {default as bursar} from './bursar.jpg';
+export {default as her} from './her.jpg';
+export {default as principal} from './principal.jpg';  
+export {default as geo} from './geo.jpg';  
+export {default as eng} from './eng.jpg';  
+

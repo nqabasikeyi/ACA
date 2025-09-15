@@ -17,7 +17,7 @@ const About = () => {
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h2 className="text-3xl font-semibold mb-6 text-blue-700">About Us</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              At ACA, we are dedicated to fostering an environment of academic excellence, creativity, and holistic development. Our state-of-the-art facilities and passionate faculty ensure a quality education that empowers students to reach their full potential.
+              Amazon Christian Academy (ACA), founded in 2022, is a Church of Christ institution dedicated to providing quality education and holistic development
             </p>
           </div>
           <div className="md:w-1/2 md:pl-10">

@@ -147,7 +147,6 @@ function Contact() {
           <iframe
             title="Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3737.989490168762!2d29.2068211682312!3d-20.465624840853863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ecaef004bb360cb%3A0xc869834bfb4b7321!2sAmazon%20Christian%20Academy%3A%20Church%20of%20Christ!5e0!3m2!1sen!2szm!4v1757587067864!5m2!1sen!2szm" 
-            
             frameBorder="0"
             className="w-full h-[500px] border-0"
             allowFullScreen
