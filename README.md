@@ -2,7 +2,7 @@
 
 # School Website
 
-Welcome to the School Website project! This project is designed to provide a modern and engaging online presence for a school, featuring components such as About Us, History, Contact Information, and more. Built with React and Vite, this application delivers a seamless user experience with modern design aesthetics.
+Welcome to the Amazon Christian Academy School Website project! This project is designed to provide a modern and engaging online presence for the school, featuring components such as About Us, Glimpse, Contact Information, and more. Built with React and Vite, this application delivers a seamless user experience with modern design aesthetics.
 
 ## 📸 Screenshots
 
@@ -17,7 +17,7 @@ Follow these steps to set up and run the project on your local machine.
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/MangeshChate/school-website-Task.git
+git clone https://github.com/NqabaXO/ACA.git
 cd your-repository
 ```
 
@@ -59,7 +59,7 @@ Navigate through the following sections of the website:
 
 - **Home Page**: Features an introduction to the school with a modern layout.
 - **About Us**: Provides information about the school's mission, vision, and values.
-- **History**: Highlights the school's history with a beautiful timeline.
+- **Glimpse**: Highlights the school's history with a beautiful timeline.
 - **Contact Us**: Includes a contact form, office hours, location map, and admission details.
 
 ### Contact Form
@@ -75,5 +75,6 @@ The contact form uses [EmailJS](https://www.emailjs.com/) for sending emails. En
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A fast build tool for modern web projects.
 - **Tailwind CSS**: A utility-first CSS framework for designing beautiful interfaces.
+
 
 
