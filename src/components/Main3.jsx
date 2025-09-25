@@ -33,7 +33,7 @@ function Main3() {
                         </p>
                         <span>
 
-                        <Link to="/college" className='btn shadow-lg  mt-5 fw-bold rounded-0 btn-primary'>Go Explore <ArrowRightAltIcon /> </Link>
+                        <Link to="/students" className='btn shadow-lg  mt-5 fw-bold rounded-0 btn-primary'>Go Explore <ArrowRightAltIcon /> </Link>
                         </span>
                     </div>
 

@@ -44,6 +44,7 @@ const Students = () => {
               { name: 'Mthabisi Ncube', achievement: 'Gold Medalist in Chess Provincial Championship 2025' },
               { name: 'Hillary Mpofu', achievement: 'First Position in POTRAZ Letter Writing Competition 2025' },
               { name: 'Nontobeko Khumalo', achievement: 'First Position in POTRAZ Letter Writing Competition 2024' },
+              { name: 'Bongiwe Sibanda', achievement: 'First Position in DARTS Provincial Level 2024' },
             ].map((item, index) => (
               <li key={index} className="flex items-center">
                 <span className="w-3 h-3 bg-yellow-400 rounded-full mr-3"></span>

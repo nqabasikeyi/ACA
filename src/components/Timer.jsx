@@ -10,7 +10,7 @@ function Timer() {
       <div className='container gap-3 lg:gap-0 flex flex-col lg:flex-row justify-around lg:p-5 p-4 items-center'>
         <div className='flex flex-col lg:gap-5 gap-3 '>
           <span className='text-small  lg:text-2xl '>
-            Events Date  27 September 2025
+            Events Date  28 November 2025
           </span>
           <span className='text-lg hidden lg:block overflow-y-hidden lg:text-4xl lg:w-[400px] w-auto font-bold'>
           Amazon Christian Academy <br />

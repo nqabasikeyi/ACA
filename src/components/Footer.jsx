@@ -22,7 +22,7 @@ function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Amazon Christian Academy</h6>
               <p>
                 Address: <br />
-                56, Filabusi <br />
+                31, Filabusi <br />
                 Matebeleland South, <br />
                 Zimbabwe
               </p>

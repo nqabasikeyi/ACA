@@ -1,7 +1,7 @@
 import { Cancel } from '@mui/icons-material';
 import { useState } from 'react';
 import Modal from 'react-modal';
-import {showcase,showcase1,showcase2,showcase3,showcase4,showcase5,showcase6,showcase7,showcase8,showcase9,showcase10,showcase11,showcase12, showcase13, showcase14,showcase15} from '../assets/index'
+import {coverpage,showcase,showcase1,showcase2,showcase3,showcase4,showcase5,showcase6,showcase7,showcase8,showcase9,showcase10,showcase11,showcase12, showcase13, showcase14,showcase15, showcase16, showcase17,showcase18, showcase19, showcase20, arts1} from '../assets/index'
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 Modal.setAppElement('#root');
@@ -12,8 +12,10 @@ const Campus = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const campusImages = [
+    coverpage,
     showcase,
     showcase1,
+    arts1,
     showcase2,
     showcase3,
     showcase4,
@@ -28,6 +30,11 @@ const Campus = () => {
     showcase13,
     showcase14,
     showcase15, 
+     showcase16,
+     showcase17,
+     showcase18,
+     showcase19,
+     showcase20,
   ];
 
   const campusVideos = [

@@ -1,4 +1,4 @@
-import {eng, bes, her, nde, pes, acc, bio, bursar, tg, principal, geo } from "../assets/index";
+import {eng, bes,bible,math, noma, lit, her, nde, pes, acc, bio, bursar, tg, principal, geo, sci } from "../assets/index";
 
 const aboutData = [
   {
@@ -11,7 +11,7 @@ const aboutData = [
   {
     name: "Mrs N Mlangeni",
     description: "School Administrator",
-    image: "https://t4.ftcdn.net/jpg/03/13/37/31/360_F_313373132_b9Az7XaGLRvSLHXlINXBIGPMIOLok8ZB.jpg", 
+    image: noma, 
     quote: "Together, we can achieve greatness. Let’s work hand-in-hand to shape the future and build a thriving school environment.",
    
   },
@@ -22,32 +22,39 @@ const aboutData = [
     quote: "Managing our school’s resources responsibly ensures that every student has the tools they need to succeed. Together, we build a foundation of trust, transparency, and opportunity.",
    
   },
-     {
-    name: "Min T Dlamini",
-    description: "Bible Teacher",
-    image: "https://t4.ftcdn.net/jpg/03/13/37/31/360_F_313373132_b9Az7XaGLRvSLHXlINXBIGPMIOLok8ZB.jpg", 
-    quote: "Through the study of the Bible, we learn values that guide our hearts and minds. Let us explore its teachings to inspire faith, character, and wisdom in everyday life"
-    
-  },
   {
     name: "Mrs P Ndlovu",
     description: "Literature in English Teacher",
-    image: "https://www.shutterstock.com/image-photo/smiling-cheerful-young-adult-african-600nw-1850821510.jpg", 
+    image: lit, 
     quote: "Literature opens windows into different worlds. Let’s journey through stories that shape minds and inspire hearts.",
    
   },
   {
     name: "Mr S Maseko",
-    description: "Agriculture Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
-    quote: "SAgriculture is the root of life and sustainability. Let’s cultivate knowledge that feeds nations and secures our future.",
+    description: "Science Teacher",
+    image: sci, 
+    quote: "Science is the root of discovery and progress. Let’s explore knowledge that powers innovation and secures our future.",
     
   },
    {
-    name: "Mrs S Jamela",
-    description: "Business Enterprise Skills Teacher",
-    image: bes, 
-    quote: "Enterprise sparks innovation and opportunity. Let’s build skills to create, lead, and succeed in business.",
+    name: "Min T Dlamini",
+    description: "Bible Teacher",
+    image: bible, 
+    quote: "Through the study of the Bible, we learn values that guide our hearts and minds. Let us explore its teachings to inspire faith, character, and wisdom in everyday life"
+    
+  },
+  {
+    name: "Mr S Jamela",
+    description: "IsiNdebele Teacher",
+    image: nde, 
+    quote: "IsiNdebele liphila emoyeni wobuntu bethu. Masilondoloze ubuhle bayo njalo sabelane ngelukuluku kwayo ngokuqhosha.",
+    
+  },
+  {
+    name: "Mrs K S Ncube",
+    description: "Heritage Studies Teacher",
+    image: her, 
+    quote: "Heritage connects us to our roots and guides our future. Let us celebrate who we are and where we come from.",
     
   },
   {
@@ -58,9 +65,23 @@ const aboutData = [
     
   },
   {
+    name: "Mrs E Khabi",
+    description: "English Teacher",
+    image: eng, 
+    quote: "English is the bridge to communication and expression. Let’s master it together to share our voices with the world.",
+    
+  },
+  {
+    name: "Mrs M M Munanga",
+    description: "PES Teacher",
+    image: pes, 
+    quote: "Through movement and teamwork, PES builds strong bodies and stronger characters. Let us grow in strength, skill, and spirit.",
+    
+  },
+  {
     name: "Miss N Moyo",
     description: "Mathematics Teacher",
-    image: "https://media.istockphoto.com/id/1171197670/photo/mid-adult-teacher-poses-for-portrait-in-classroom.jpg?s=612x612&w=0&k=20&c=lBqeVyIQKsBn4bIGVgRQdoE_FHc0bx58HIOVqraHTfY=", 
+    image: math, 
     quote: "Mathematics is the language of the universe. Let's unlock its secrets together.",
     
   },
@@ -72,24 +93,17 @@ const aboutData = [
     
   },
   {
-    name: "Mrs K Ncube",
-    description: "Heritage Studies Teacher",
-    image: her, 
-    quote: "Heritage connects us to our roots and guides our future. Let us celebrate who we are and where we come from.",
-    
-  },
-  {
-    name: "Mrs M M Munanga",
-    description: "PES Teacher",
-    image: pes, 
-    quote: "Through movement and teamwork, PES builds strong bodies and stronger characters. Let us grow in strength, skill, and spirit.",
-    
-  },
-  {
     name: "Mr B Khabi",
     description: "Geography Teacher",
     image: geo, 
     quote: "Geography helps us understand the world we live in. Let’s explore landscapes, cultures, and the forces that shape our planet.",
+    
+  },
+   {
+    name: "Mrs S Jamela",
+    description: "Business Enterprise Skills Teacher",
+    image: bes, 
+    quote: "Enterprise sparks innovation and opportunity. Let’s build skills to create, lead, and succeed in business.",
     
   },
   {
@@ -99,21 +113,6 @@ const aboutData = [
     quote: "Accounting is the language of business. Let’s master the numbers that drive decisions and growth.",
     
   },
-  {
-    name: "Mr S Jamela",
-    description: "IsiNdebele Teacher",
-    image: nde, 
-    quote: "IsiNdebele liphila emoyeni wobuntu bethu. Masilondoloze ubuhle bayo njalo sabelane ngelukuluku kwayo ngokuqhosha.",
-    
-  },
-  {
-    name: "Mrs E Khabi",
-    description: "English Teacher",
-    image: eng, 
-    quote: "English is the bridge to communication and expression. Let’s master it together to share our voices with the world.",
-    
-  },
- 
   {
     name: "Miss Y Rodgers",
     description: "Technical Drawing Teacher",

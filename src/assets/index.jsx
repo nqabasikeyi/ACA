@@ -2,6 +2,13 @@ export {default as carousel} from './showcase.jpg';
 export {default as carousel1} from './showcase.jpg'; 
 export {default as carousel2} from './carousel2.jpg'; 
 export {default as carousel3} from './carousel3.jpg'; 
+export {default as coverpage} from './coverpage.jpg';
+
+export {default as stem} from './stem.jpg';
+export {default as athletics} from './athletics.jpg';
+export {default as arts} from './arts.jpg';
+export {default as arts1} from './arts1.jpg';
+export {default as biblestudy} from './biblestudy.jpg';
 
 export {default as showcase} from './showcase.jpg';  
 export {default as showcase1} from './showcase1.jpg';  
@@ -19,6 +26,12 @@ export {default as showcase12} from './showcase12.jpg';
 export {default as showcase13} from './showcase13.jpg'; 
 export {default as showcase14} from './showcase14.jpg'; 
 export {default as showcase15} from './showcase15.jpg'; 
+export {default as showcase16} from './showcase16.jpg';
+export {default as showcase17} from './showcase17.jpg';
+export {default as showcase18} from './showcase18.jpg';
+export {default as showcase19} from './showcase19.jpg';
+export {default as showcase20} from './showcase20.jpg';
+export {default as school_history} from './school_history.jpg';
 
 
 export {default as bes} from './bes.jpg';
@@ -32,4 +45,8 @@ export {default as her} from './her.jpg';
 export {default as principal} from './principal.jpg';  
 export {default as geo} from './geo.jpg';  
 export {default as eng} from './eng.jpg';  
-
+export {default as lit} from './lit.jpg';  
+export {default as math} from './math.jpg';  
+export {default as sci} from './sci.jpg';
+export {default as bible} from './bible.jpg';
+export {default as noma} from './noma.jpg';

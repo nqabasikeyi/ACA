@@ -1,5 +1,5 @@
 import React from 'react';
-import coverPage from '../assets/coverpage.jpg';
+import { school_history } from '../assets/';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -22,7 +22,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 md:pl-10">
             <img 
-              src={coverPage} 
+              src={school_history} 
               alt="Amazon Christian Academy"
               className="w-full h-auto object-cover rounded-lg shadow-2xl"
             />

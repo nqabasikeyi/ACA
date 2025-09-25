@@ -87,7 +87,7 @@ function Contact() {
             <h3 className="text-2xl font-semibold mb-4 text-center text-blue-800">
               Visit Us
             </h3>
-            <p className="text-gray-600 text-center">56 Filabusi, Zimbabwe</p>
+            <p className="text-gray-600 text-center">31 Filabusi, Zimbabwe</p>
           </div>
         </div>
       </div>

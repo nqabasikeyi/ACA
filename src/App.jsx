@@ -2,25 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { KeyboardArrowUp } from '@mui/icons-material';
-
-import Coursoul from './components/Coursoul';
-import Main1 from './components/Main1';
-import Main2 from './components/Main2';
-import Marquee from './components/Marquee';
-import Navbar from './components/Navbar';
-import Checkout from './components/Checkout';
-import Main3 from './components/Main3';
-import Footer from './components/Footer';
-//import About from './components/Faculty';
-import Moto from './components/Moto';
-import Campus from './components/Campus';
-import College from './components/About';
-import Contact from './components/Contact';
-import Timer from './components/Timer';
-import Events from './components/Events';
-import Curriculum from './components/Curriculum';
-import Faculty from './components/Faculty';
-import Students from './components/Students';
+import { AboutPrograms, Campus, Checkout,College, Contact, Coursoul, Curriculum, Events, Faculty, Footer, Main1, Main2, Main3, Marquee, Moto, Navbar, Students, Timer} from './components/index.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,6 +22,7 @@ function App() {
   return (
     <Router>
       <div className='bg-gray-100'>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route
@@ -50,10 +34,8 @@ function App() {
                 <Marquee text={`"Welcome to Amazon Christian Academy, Home Of The Lions."`} />
                 <Timer />
                 <Marquee text={`"Join us for our Annual Speech and Accolades Day"`} />
-                <Main2 />
-                
+                <AboutPrograms/>
                 <Main1 />
-                <Main3 />
               </div>
             }
           />
@@ -77,9 +59,6 @@ function App() {
             element={
               <>
                 <Students />
-                <Main2 />
-                <Checkout />
-                <Main3 />
               </>
             }
           />
@@ -91,9 +70,7 @@ function App() {
               <>
                 <Campus />
                 <Main2 />
-                <Checkout />
-                <Main1 />
-                <Main3 />
+               
               </>
             }
           />
@@ -120,34 +97,17 @@ function App() {
                 <Curriculum />
                 <Main2 />
                 <Checkout />
-                <Main3 />
               </>
             }
           />
-
-          <Route
-            exact
-            path='/moto'
-            element={
-              <>
-                <Moto />
-                <Main2 />
-                <Checkout />
-                <Main3 />
-              </>
-            }
-          />
-
           <Route
             exact
             path='/aboutus'
             element={
               <>
                 <College />
-                <Main2 />
-                <Checkout />
-                <Main1 />
-                <Main3 />
+                 <Moto />
+               
               </>
             }
           />
@@ -158,9 +118,8 @@ function App() {
             element={
               <>
                 <Contact />
-                <Main2 />
-                <Checkout />
-                <Main3 />
+                
+                
               </>
             }
           />

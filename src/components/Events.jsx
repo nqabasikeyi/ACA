@@ -5,19 +5,14 @@ const eventsData = [
     category: "September Events",
     events: [
       {
-        title: "Math Wizard Competition",
-        date: "2025-09-15",
-        description: "An exciting competition where students showcase their mathematical skills through fun puzzles and challenges."
+        title: "Athletics Club Hill Run",
+        date: "2025-09-19",
+        description: "A challenging hill running event where students test their endurance, speed, and stamina."
       },
       {
-        title: "Art Fair",
-        date: "2025-09-22",
-        description: "A creative event where students display their artwork, including paintings, drawings, and crafts."
-      },
-      {
-        title: "Physical Fitness Week",
-        date: "2025-09-28",
-        description: "A week dedicated to various physical activities and sports to promote health and fitness among students."
+        title: "Interhouse Competitions",
+        date: "2025-09-29",
+        description: "A day of spirited rivalry where school houses compete in various activities, showcasing talent, teamwork, and school spirit."
       }
     ]
   },
@@ -25,19 +20,9 @@ const eventsData = [
     category: "October Events",
     events: [
       {
-        title: "Zimsec Examinations",
-        date: "2025-10-14",
-        description: "O Level Examnations begin for all students in Form 4"
-      },
-      {
-        title: "Spelling Bee Competition",
-        date: "2024-10-15",
-        description: "A quiz competition focused on computer science topics, including programming, algorithms, and tech trivia."
-      },
-      {
-        title: "Exeat Holiday",
-        date: "2025-10-28",
-        description: "Form 1 to Form 3 Exeat Holiday of 3 days, coming back on 2 September 2025"
+        title: "External Examinations",
+        date: "2025-10-13",
+        description: "O Level examinations for all Form 4 students begin, assessing knowledge and academic preparedness."
       }
     ]
   },
@@ -45,23 +30,29 @@ const eventsData = [
     category: "November Events",
     events: [
       {
-        title: "Science Olympiad",
-        date: "2025-11-7",
-        description: "An advanced competition covering physics, chemistry, and biology, aimed at encouraging scientific inquiry and excellence."
-      },
-      {
         title: "Internal Examinations",
-        date: "2025-11-16",
-        description: "Form 1 to Form 3 Internal Examinations for all subjects"
+        date: "2025-11-10",
+        description: "End-of-year internal examinations for students in Forms 1 to 3 across all subjects."
       },
       {
-        title: "Math Challenge",
-        date: "2025-04-21",
-        description: "A challenging event featuring advanced mathematical problems and puzzles designed to test and improve students' mathematical skills."
+        title: "Speech and Accolades Day",
+        date: "2025-11-28",
+        description: "A formal ceremony celebrating academic achievements, sporting excellence, and contributions to school life."
+      }
+    ]
+  },
+  {
+    category: "December Events",
+    events: [
+      {
+        title: "National Tree Planting Day",
+        date: "2025-12-06",
+        description: "An environmental initiative promoting sustainability where students and staff participate in tree planting activities."
       }
     ]
   }
 ];
+
 const Events = () => {
   const [activeCategory, setActiveCategory] = useState('Primary Events');
 
