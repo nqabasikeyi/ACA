@@ -10,12 +10,26 @@ function Contact() {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    alert("Message sent successfully!");
-    navigate("/home");
+
+    try {
+       await emailjs.sendForm(
+        "service_jdydgdx",   // Replace with your EmailJS service ID
+        "template_isq55fy",  
+        form.current,
+        "jrIGv6A_SlTCeYJXj"    
+      );
+
+      alert("Message sent successfully!");
+      navigate("/home");
+    } catch (error) {
+      console.error(error.text);
+      alert("Failed to send message. Please try again.");
+    }
   };
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen">
+      {/* Hero Section */}
       <div
         className="relative h-[90vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${carousel1})` }}
@@ -23,9 +37,6 @@ function Contact() {
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="container mx-auto px-6 mt-5 lg:mt-0 lg:mb-0 mb-5">
             <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
               ref={form}
               onSubmit={sendEmail}
               className="bg-white bg-opacity-95 max-w-2xl mx-auto p-10 rounded-3xl shadow-2xl transform hover:scale-105 transition duration-300"
@@ -33,6 +44,13 @@ function Contact() {
               <h2 className="text-5xl font-extrabold mb-8 text-center text-blue-800 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                 Contact Us
               </h2>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full p-4 mb-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                required
+              />
               <input
                 type="email"
                 name="email"
@@ -58,6 +76,7 @@ function Contact() {
         </div>
       </div>
 
+      {/* Contact Info */}
       <div className="container mx-auto py-20 px-6">
         <h2 className="text-5xl font-extrabold mb-16 text-center text-blue-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
           Get In Touch
@@ -65,7 +84,7 @@ function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="p-8 bg-white shadow-xl rounded-3xl hover:shadow-2xl transition duration-300 transform hover:scale-105 text-center">
             <AccessTime
-              className="text-5xl text-blue-500 mb-6 mx-auto "
+              className="text-5xl text-blue-500 mb-6 mx-auto"
               style={{ fontSize: "3rem" }}
             />
             <h3 className="text-2xl font-semibold mb-4 text-center text-blue-800">
@@ -92,6 +111,7 @@ function Contact() {
         </div>
       </div>
 
+      {/* Admission Info */}
       <div className="bg-blue-50 py-20 px-6">
         <div className="container mx-auto">
           <h2 className="text-5xl font-extrabold text-center mb-16 text-blue-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
@@ -139,6 +159,7 @@ function Contact() {
         </div>
       </div>
 
+      {/* Google Map */}
       <div className="container mx-auto py-20 px-6">
         <h2 className="text-5xl font-extrabold text-center mb-16 text-blue-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
           Find Us On The Map
@@ -146,7 +167,7 @@ function Contact() {
         <div className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300">
           <iframe
             title="Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3737.989490168762!2d29.2068211682312!3d-20.465624840853863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ecaef004bb360cb%3A0xc869834bfb4b7321!2sAmazon%20Christian%20Academy%3A%20Church%20of%20Christ!5e0!3m2!1sen!2szm!4v1757587067864!5m2!1sen!2szm" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3737.989490168762!2d29.2068211682312!3d-20.465624840853863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ecaef004bb360cb%3A0xc869834bfb4b7321!2sAmazon%20Christian%20Academy%3A%20Church%20of%20Christ!5e0!3m2!1sen!2szm!4v1757587067864!5m2!1sen!2szm"
             frameBorder="0"
             className="w-full h-[500px] border-0"
             allowFullScreen

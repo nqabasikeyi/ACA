@@ -18,7 +18,7 @@ function Main1() {
           <div className='flex items-center gap-3 justify-start '>
             <img src={noma} className='shadow rounded-full w-[80px] lg:w-[90px] h-[80px] lg:h-[90px] object-cover' alt="Chairman" />
             <div className='flex flex-col'>
-              <span className='lg:text-2xl text-xl font-bold'>Nomathamsanqa Mlangeni</span>
+              <span className='lg:text-2xl text-xl font-bold'>Mrs N Mlangeni</span>
               <span className='text-sm text-grey-500'>School Administrator</span>
             </div>
           </div>
