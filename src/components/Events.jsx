@@ -20,6 +20,11 @@ const eventsData = [
     category: "October Events",
     events: [
       {
+         title: "Breast Cancer Awareness Day",
+        date: "2025-10-05",
+        description: "A day dedicated to raising awareness about breast cancer through educational talks, pink-themed activities, and community support initiatives."
+      },
+      {
         title: "External Examinations",
         date: "2025-10-13",
         description: "O Level examinations for all Form 4 students begin, assessing knowledge and academic preparedness."
@@ -33,6 +38,11 @@ const eventsData = [
         title: "Internal Examinations",
         date: "2025-11-10",
         description: "End-of-year internal examinations for students in Forms 1 to 3 across all subjects."
+      },
+      {
+         title: "Form 4 Leavers' Prom Night",
+        date: "2025-11-21",
+        description: "A memorable evening where Form 4 students celebrate the end of their secondary school journey with music, dancing, and formal elegance."
       },
       {
         title: "Speech and Accolades Day",

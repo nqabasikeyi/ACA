@@ -1,0 +1,595 @@
+\documentclass[conference,letterpaper]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{fixltx2e}
+\usepackage{gensymb}
+\usepackage{todonotes}
+\usepackage{url}
+% correct bad hyphenation here
+
+\hyphenation{op-tical net-works semi-conduc-tor top-ology}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% paper title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% can use linebreaks \\ within to get better formatting as desired
+\title{Database Management System Assignment 1 2025}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% author names and affiliations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% option 1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use a multiple column layout for up to three different
+% affiliations
+
+%\author{\IEEEauthorblockN{Nqaba Jabulani Sikeyi}
+%\IEEEauthorblockA{Center for Data Intensive Science\\
+%University of Copperbelt \\
+%Kitwe, Zambia\\
+%jabuzw1@gmail.com}
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% option 2)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\IEEEauthorblockN{Nqaba J. Sikeyi\IEEEauthorrefmark{1}}
+
+\IEEEauthorblockA{\IEEEauthorrefmark{1}25212757\\
+University of Copperbelt,
+Kitwe, Zambia\\ jabuzw1@gmail.com}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% make the title area
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+%\boldmath
+This paper presents the design of a database management system for Katikafwe Private School with the aim of improving the management of academic and administrative records. The school faces challenges in tracking information across twelve grades, each divided into two classes, with additional complexity arising from the management of students, teachers, subjects, and guardians.
+
+The system was developed through a structured process that involves requirement analysis, conceptual design, logical design, and physical implementation. Conceptual modeling used a standard ER notation and Crow’s Foot notation to represent entities, attributes, relationships, and constraints, while also incorporating multivalued, composite, and derived attributes. The logical design was implemented in MySQL to provide reliable data storage, accurate performance tracking, and simplified report generation.
+
+The resulting framework strengthens the management of records at Katikafwe Private School and provides a scalable foundation for future integration with a full school information system.
+
+ 
+
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+The management of modern educational institutions requires more advanced data capturing systems that are very fast but maintain a certain degree of accuracy. Katikafwe Private School, which enrolls students from grade one to grade twelve, faces challenges in managing its academic records due to their reliance in traditional record-keeping methods. The school’s operational records include twelve distinct grade levels each with exactly two classes, teacher assignments across various roles, mandatory and selective subjects, student enrollment records, guardian records, and academic performance tracking across multiple assessments.
+
+Traditional methods such as spreadsheets and paper-based systems are increasingly inadequate for handling these complexities. Reason being, they often result in data redundancy, inconsistencies, and difficulty in generating accurate reports as well as retrieving them. Katikafwe Private School’s specific requirements in addition to the ones mentioned earlier include maintaining exactly two classes per grade, managing hierarchical teacher roles, ensuring students enroll in all mandatory subjects while selecting electives, guarantee of each student to have at least one guardian, and tracking term-based test results.
+
+This paper presents the design and implementation of a comprehensive relational database system which is developed to address the challenges faced by the institution. The methodology used was Agile-informed waterfall model. This model structured the project into four distinct phases which include: the requirements analysis, conceptual modeling using Entity-Relationship (ER) diagrams, logical design into a normalized relational schema, and physical implementation in MySQL. This hybrid approach combined the systematic progression of traditional waterfall development with iterative refinement cycles characteristic of Agile methodologies, ensuring thorough validation at each development stage /cite\{Pargaonkar\}. The resulting database system not only meets the institution's current operational requirements but also ensures a dynamic system scalable for the future institutional growth. Ultimately this enhances administrative efficiency, ensuring data integrity, and facilitating comprehensive academic monitoring capabilities for Katikafwe Private School
+
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NEW SECTION HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Entities and Attributes}
+The database design for Katikafwe Private School encompasses a comprehensive set of entities that collectively model the institution's academic and administrative ecosystem. Centered around the core actor, the student, the design ensures that every entity either directly interacts or influences the student’s academic journey ntities with no direct or functional relevance to the student were excluded to maintain schema efficiency and data integrity. The final set of entities includes Grade, Class, Teacher, Student, Subject, Guardian, Test\_Result, Term, Student\_Guardian, Class\_Subject, Fee\_Structure, and Fee\_Transaction, each fulfilling a distinct operational role within the educational management framework.
+
+ %% A subsection
+\subsection{Student Entity}
+
+The Student entity serves as the central component of the schema, capturing all relevant information about learners. Attributes include student\_id, first\_name, last\_name, national\_id, date\_of\_birth, gender, status, enrollment\_date, enrollment\_time, and address. Although \textit{first\_name} and \textit{last\_name} could conceptually be multi-valued, as individuals may possess multiple given names or double-barreled surnames, they are implemented as single-valued attributes to simplify queries and data indexing while maintaining readability during retrieval operations. Since each student belongs to a class, therefore class\_id serves as a foreign key that points to the Class entity. The derived attribute, age, is calculated as the difference between the current date and the date\_of\_birth so avoid data redundancy. Address was initially a complex attribute. However, it was simplified into a single-valued field to enhance query performance and normalization consistency between related entities. Constraints for student are that student belongs to exactly one class and has at least one guardian.
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Student} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{student\_id} & INT \\
+\texttt{class\_id} & INT \\
+\texttt{national\_id} & VARCHAR(20) \\
+\texttt{first\_name} & VARCHAR(50) \\
+\texttt{last\_name} & VARCHAR(50) \\
+\texttt{date\_of\_birth} & DATE \\
+\texttt{gender} & ENUM('Male','Female') \\
+\texttt{status} & ENUM('Active','Transferred','Graduated') \\
+\texttt{enrollment\_date} & DATE \\
+\texttt{enrollment\_time} & TIME \\
+\texttt{age} & INT \\
+\bottomrule
+\end{tabular}
+\label{tab:student-entity}
+\end{table}
+
+
+\subsection{Guardian Entity}
+ The guardian entity is a weak entity, since its existence is dependent on the student entity. It includes attributes such as guardian\_id, first\_name, last\_name, relationship\_to\_student, and contact. Contact is a complex attribute that branches into address, phone\_number and email. Address is a composite attribute that further branches into state, city and postal Code. Phone\_number is a multi-valued attribute that recognizes the possession of multiple contact numbers from guardian a parent.Constraint is each student must have at least one guardian but one guardian can be linked to more than one student.
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Guardian} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{guardian\_id} & INT \\
+\texttt{student\_id} & INT \\
+\texttt{first\_name} & VARCHAR(50) \\
+\texttt{last\_name} & VARCHAR(50) \\
+\texttt{relationship\_to\_student} & VARCHAR(30) \\
+\texttt{phone\_number} & VARCHAR(20) \\
+\texttt{email} & VARCHAR(100) \\
+\texttt{address} & VARCHAR(255) \\
+\bottomrule
+\end{tabular}
+\label{tab:guardian-entity}
+\end{table}
+
+
+ %% A subsection
+\subsection{Grade Entity}
+The Grade entity represents the academic levels within the school. Its attributes being the grade\_id (primary key), grade\_level (ranging from 1 to 12) and teacher\_id (foreign key referencing the Teacher entity).Validation constraints will ensure that the grade\_level remains within the school’s academic range. It will also ensure that each grade is assigned a teacher supervisor. Each grade also has exactly two classes. In addition, students automatically progress to the next grade if they are in a grade less than 12. Grade 12 students become graduates. Assumption for the system is that each grade pays the same amount of fees.
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Grade} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{grade\_id} & INT \\
+\texttt{grade\_level} & INT \\
+\texttt{teacher\_id} & INT \\
+\end{tabular}
+\label{tab:grade-entity}
+\end{table}
+ %% A subsection
+\subsection{Class Entity}
+The Class entity represents individual classroom units within each grade. Attributes include the class\_id (primary key), class\_teacher\_id (foreign key from Teacher),class\_name, room\_number, and capacity. Capacity is a composite attribute that is subdivided into max\_capacity and current-capacity. This is to ensure that the facilitation administration monitors the enrollment limits.A unique constraint on room\_number prevents duplication and aids in spatial management. The constraint is that each grade must have two classes. Each class has defined mandatory subjects and selective subjects have enrollment limits.
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Class} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{class\_id} & INT \\
+\texttt{grade\_id} & INT \\
+\texttt{class\_teacher\_id} & INT \\
+\texttt{class\_name} & VARCHAR(50) \\
+\texttt{room\_number} & VARCHAR(10) \\
+\texttt{capacity} & INT \\
+\bottomrule
+\end{tabular}
+\label{tab:class-entity}
+\end{table}
+
+ %% A subsection
+\subsection{Teacher Entity}
+·       The Teacher entity stores information about school faculty members responsible for teaching and class administration. Attributes include teacher\_id, first\_name, last\_name, gender, date\_of\_birth, contact, role, employment\_date, employment\_time and age. The contact attribute mirrors that of the Guardian entity. Both employment\_time and age are derived attributes calculated at runtime to avoid redundancy. Employment\_time mainly capturing the number of years a teacher has been employed in the school. The attribute of the role captures the administrative or instructional designation of the teacher, for example, principal, senior teacher, or head of department. The constraint is that a teacher can serve multiple roles. Teachers can only be grade or class teacher once per year.
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Teacher} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{teacher\_id} & INT \\
+\texttt{first\_name} & VARCHAR(50) \\
+\texttt{last\_name} & VARCHAR(50) \\
+\texttt{gender} & ENUM('Male','Female') \\
+\texttt{date\_of\_birth} & DATE \\
+\texttt{contact} & VARCHAR(255) \\
+\texttt{role} & VARCHAR(50) \\
+\texttt{employment\_date} & DATE \\
+\texttt{employment\_time} & INT \\
+\texttt{age} & INT \\
+\bottomrule
+\end{tabular}\label{tab:teacher-entity}
+\end{table}
+
+
+ %% A subsection
+\subsection{Term Entity}
+The Term entity represents academic periods. Its attributes include term\_id, academic\_year, term\_number (values 1–3), term\_name, start\_date, and end\_date. Validation ensures chronological consistency and prevents overlapping term durations. This entity provides a temporal link across academic records such as grades, subjects, and financial transactions. The constraint used is that each academic year has a fixed number of terms, three.
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Term} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{term\_id} & INT \\
+\texttt{academic\_year} & YEAR \\
+\texttt{term\_number} & ENUM('1','2','3') \\
+\texttt{term\_name} & VARCHAR(50) \\
+\texttt{start\_date} & DATE \\
+\texttt{end\_date} & DATE \\
+\bottomrule
+\end{tabular}
+\label{tab:term-entity}
+\end{table}
+
+ %% A subsection
+\subsection{Fee\_Structure Entity}
+The Fee\_Structure entity defines the school fees policies.  Attributes include fee\_structure\_id, grade\_id, academic\_year, term\_id, fee\_type, amount, due\_date, and description. This entity makes use of unique constraints so as to prevent the duplication of fee definitions. 
+
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Fee\_Structure} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{fee\_structure\_id} & INT \\
+\texttt{grade\_id} & INT \\
+\texttt{academic\_year} & YEAR \\
+\texttt{term\_id} & INT \\
+\texttt{fee\_type} & VARCHAR(50) \\
+\texttt{amount} & DECIMAL(10,2) \\
+\texttt{due\_date} & DATE \\
+\texttt{description} & TEXT \\
+\bottomrule
+\end{tabular}
+\label{tab:fee-structure-entity}
+\end{table}
+
+ %% A subsection
+\subsection{Fee\_Transaction Entity}
+The Fee\_Transaction entity captures all payment-related activities. It contains attributes such transaction\_id, student\_id, fee\_structure\_id, amount\_paid, balance\_due, payment\_date, status, and timestamp. The balance\_due attribute is derived as the difference between the required fee and the cumulative amount paid. This is obtained through a generated column.
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Fee\_Transaction} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{transaction\_id} & INT \\
+\texttt{student\_id} & INT \\
+\texttt{fee\_structure\_id} & INT \\
+\texttt{amount\_paid} & DECIMAL(10,2) \\
+\texttt{balance\_due} & DECIMAL(10,2) \\
+\texttt{payment\_date} & DATE \\
+\texttt{status} & ENUM('Paid','Pending','Partially Paid') \\
+\texttt{timestamp} & DATETIME \\
+\bottomrule
+\end{tabular}
+\label{tab:fee-transaction-entity}
+\end{table}
+
+ %% A subsection
+\subsection{Subject Entity}
+The Subject entity manages the academic curriculum content.  Its attributes include subject\_id, subject\_name, subject\_code, type (mandatory or elective), description, and credit\_hours. Uniqueness constraints on subject\_code ensure standardized classification across multiple academic levels. The system assumes that the school strictly adheres to the Examinations Council of Zambia (ECZ) and uses it as its only examination board. The constraint is that each subject can have multiple teachers..
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Subject} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{subject\_id} & INT \\
+\texttt{subject\_name} & VARCHAR(100) \\
+\texttt{subject\_code} & VARCHAR(20) \\
+\texttt{type} & ENUM('Mandatory','Elective') \\
+\texttt{description} & TEXT \\
+\texttt{credit\_hours} & INT \\
+\bottomrule
+\end{tabular}
+\label{tab:subject-entity}
+\end{table}
+ %% A subsection
+\subsection{Test\_Result Entity}
+The Test\_Result entity captures the learner’s performance. Its attributes include student\_id, subject\_id, term\_id, test\_type, academic\_year, marks\_obtained, maximum\_mark, grade\_score and test\_date. Domain constraints restrict marks\_obtained from exceeding maximum\_marks, ensuring data accuracy in performance analytics. The grade\_score attribute is a derived attribute that outputs the symbolic grade (e.g., "Distinction", "Credit", or any other symbol) awarded for a student for an individual test. The assumption is that since the school uses ECZ for its national certifications, the grading system applied at all academic levels will strictly adhere to the official ECZ grading standards, including the use of their defined symbols and cut-off ranges. Constraint is that there are no duplicate test results for the same student, subject, test type and term.
+
+\begin{table}[h!]
+\centering
+\caption{Attributes of the \texttt{Test\_Result} Entity}
+\begin{tabular}{l l }
+\toprule
+\textbf{Attribute} & \textbf{Data Type} \\
+\midrule
+\texttt{student\_id} & INT \\
+\texttt{subject\_id} & INT \\
+\texttt{term\_id} & INT \\
+\texttt{test\_type} & VARCHAR(30) \\
+\texttt{academic\_year} & YEAR \\
+\texttt{marks\_obtained} & DECIMAL(5,2) \\
+\texttt{maximum\_mark} & DECIMAL(5,2) \\
+\texttt{grade\_score} & CHAR(2) \\
+\texttt{test\_date} & DATE \\
+\bottomrule
+\end{tabular}
+\label{tab:test-result-entity}
+\end{table}
+
+ %% A subsection
+\subsection{Associative Entity}
+The student\_guardian entity implements the many-to-many relationship between students and guardians. It includes student\_id and guardian\_id as foreign keys and is\_primary\_contact, which is a relationship attribute. Constraints enforce that each student must have at least one associated guardian.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NEW SECTION HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relationships and Cardinality}
+
+Katikafwe Private School's operational structure and business rules are accurately modeled by the database schema. This schema includes a complex web of relationships. These relationships support the academic and administrative operations of the organization while enforcing cardinality constraints that preserve data integrity. In order to implement the business rule that specifies the school's structural organization through database constraints and application logic, the Grade and Class entities have a fundamental relationship that exhibits one-to-many cardinality. This is due to the fact that each grade includes exactly two classes and every class belongs to precisely one grade.
+
+ %% A subsection
+\subsection{Class-Student}
+The relationship between Class and Student entities exhibits one-to-many cardinality. Each class contains multiple students, while each student is assigned to exactly one class per academic year. This relationship features mandatory participation for students, ensuring every learner that has been enrolled in the school has a designated instructional unit. 
+
+ %% A subsection
+\subsection{Student-Guardian}
+The association between Student and Guardian entities represents many-to-many cardinality, implemented through the Student\_Guardian associative entity. This is because students may have multiple guardians while guardians may be responsible for multiple students. Particularly in familial contexts with siblings attending the same institution.
+
+ %% A subsection
+\subsection{Class-Subject}
+The Class\_Subject associative entity, implements a ternary relationship between the Class, Subject, and Teacher entities. It reflects the institutional mandate that every subject offered to a particular class be paired with a qualified teacher. While individual teachers may be assigned to multiple class-subject combinations. This intricate relationship guarantees that every unique combination of class and subject has exactly one teacher assignment. 
+
+ %% A subsection
+\subsection{Student-Subject}
+Many-to-many cardinality is also evident in the relationship between the Student and Subject entities. This is demonstrated through enrollment records that distinguish between selective enrollment and student interest. They exhibit a mandatory participation, which is automatically generated through class assignments.
+
+ 
+%% A subsection
+\subsection{Class-Subject}
+Implemented by the Class\_Subject bridge entity, there is a ternary relationship between the Class, Subject, and Teacher entities. This relationship reflects the institutional requirement that every subject offered to a particular class be assigned to a qualified teacher. A teacher may be assigned to more than one combination of classes and subjects depending on the school's qualifications and needs. This relationship guarantees that each unique combination of class and subject has exactly one teacher assignment. Enrollment records that distinguish between required participation that is automatically generated through class assignments and selective enrollment that reflects students' academic choices and interests are another example of the many-to-many cardinality that is demonstrated in the relationship between the Student and Subject entities.
+
+%% A subsection
+\subsection{Class and Test\_results}
+
+The relationship between Student and Test\_Result entities shows one-to-many cardinality, where each student may have multiple test results across different subjects, assessment types, and academic terms, while each test result is associated with exactly one student. This relationship ensures comprehensive academic performance tracking while maintaining referential integrity through foreign key constraints. The association between Term and Test\_Result entities exhibits one-to-many cardinality, with each term encompassing multiple assessment records while each test result belongs to precisely one academic term, enabling temporal organization of academic performance data.
+
+%% A subsection
+\subsection{Grade and Fee\_Structure}
+
+The relationship between Grade and Fee\_Structure entities demonstrates one-to-many cardinality, where each grade may have multiple fee structures defined for different academic years and terms, while each fee structure is associated with exactly one grade level. This relationship supports the institution's financial management by enabling differentiated fee policies across grade levels. The association between Fee_Structure and Fee_Transaction entities shows one-to-many cardinality, with each fee structure generating multiple individual transactions as students fulfill their financial obligations, while each fee transaction references exactly one fee structure definition, ensuring consistency between institutional policies and individual financial records.
+
+Additional relationships include the connection between Teacher and Grade entities for grade teacher assignments, between Teacher and Class entities for class teacher roles, and between Teacher and Class_Subject entities for subject teaching responsibilities. These relationships incorporate constraints preventing role conflicts, such as ensuring a teacher cannot serve as class teacher for multiple classes simultaneously within the same academic year, while allowing for flexible assignment patterns that accommodate the institution's staffing structure and operational requirements.%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NEW SECTION HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Entity Relationship (ER) Diagrams}
+
+
+%% A subsection
+\subsection{Standard Notation ER Diagram }
+
+
+%% A subsection
+\subsection{Crow Foot Notation }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NEW SECTION HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementation in Relational Model }
+
+\subsection{These results}
+
+Write to-do notes to yourself and each other.
+For example, \todo[inline]{Make a real Figure \ref{fig:frog}
+and put it here.}
+
+%------------------------------------------------
+% FIGURE: Frog
+%------------------------------------------------
+\begin{figure}[hbt!] 
+\centering
+\includegraphics[width=0.5\textwidth]{figures/frog.jpg}
+\caption{A sample figure.}
+\label{fig:frog}
+\end{figure}
+
+\subsection{Comparison with previous work}
+
+\paragraph{A sample paragraph header}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary}
+
+This is a great sample template for PIRE fellows to use for collaborating
+on their summer research papers that shows how to cite and acknowledge
+the OSDC.
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+This work made use of the Open Science Data Cloud (OSDC) which is an Open
+Cloud Consortium (OCC)-sponsored project. The OSDC is supported in part by
+grants from Gordon and Betty Moore Foundation and the National Science 
+Foundation and major contributions from OCC members like the University of 
+Chicago.  \todo[inline]{Insert PIRE fellow name} was supported by the 
+National Science Foundation Partnerships for Research and Education (PIRE) 
+Award Number 1129076. Any opinions, findings, and conclusions or 
+recommendations expressed are those of the author(s) and do not necessarily 
+reflect the views of the National Science Foundation. 
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating 
+%. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{biblio}
+\bibliographystyle{IEEEtran}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% STUFF FROM THE TOP
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************

@@ -1,4 +1,4 @@
-import {eng, bes,bible,math, noma, lit, her, nde, pes, acc, bio, bursar, tg, principal, geo, sci } from "../assets/index";
+import {fars, eng, bes,bible,math, noma, lit, her, nde, pes, acc, bio, bursar, tg, principal, geo, sci } from "../assets/index";
 
 const aboutData = [
   {
@@ -8,6 +8,13 @@ const aboutData = [
     quote: "Welcome to our school community! We are dedicated to fostering a nurturing environment that promotes academic and personal growth. Join us in making a positive impact.",
    
   },
+  {
+  name: "Mrs P Ndlovu",
+  description: "Deputy Principal",
+  image: lit,
+  quote: "Leadership is about guiding each learner to discover their potential. Together, we build a school where discipline, respect, and excellence shape every future.",
+}
+,
   {
     name: "Mrs N Mlangeni",
     description: "School Administrator",
@@ -20,13 +27,6 @@ const aboutData = [
     description: "School Bursar",
     image: bursar, 
     quote: "Managing our school’s resources responsibly ensures that every student has the tools they need to succeed. Together, we build a foundation of trust, transparency, and opportunity.",
-   
-  },
-  {
-    name: "Mrs P Ndlovu",
-    description: "Literature in English Teacher",
-    image: lit, 
-    quote: "Literature opens windows into different worlds. Let’s journey through stories that shape minds and inspire hearts.",
    
   },
   {
@@ -88,7 +88,7 @@ const aboutData = [
   {
     name: "Mr D Chamisa",
     description: "History Teacher",
-    image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
+    image: fars, 
     quote: "History is the memory of humanity. Let us learn from the past to shape a wiser tomorrow.",
     
   },
@@ -121,7 +121,7 @@ const aboutData = [
     
   },
   {
-    name: "Mr N J Sikeyi",
+    name: "Mr N T Ncube",
     description: "Computer Science Teacher",
     image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
     quote: "Computer Science is the engine of innovation. Let’s code the future and solve tomorrow’s problems today.",
@@ -131,8 +131,8 @@ const aboutData = [
 
 function Faculty() {
   const principal = aboutData.find(member => member.description === "Principal");
-  const vicePrincipal = aboutData.find(member => member.description === "School Administrator");
-  const otherFaculty = aboutData.filter(member => member.description !== "Principal" && member.description !== "School Administrator");
+  const vicePrincipal = aboutData.find(member => member.description === "Deputy Principal");
+  const otherFaculty = aboutData.filter(member => member.description !== "Principal" && member.description !== "Deputy Principal");
 
   return (
     <div className='container mx-auto px-4 py-16'>
@@ -182,7 +182,7 @@ function Faculty() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherFaculty.map((data, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                <img className="h-56 w-full object-cover" src={data.image} alt={data.name} />
+                <img className="h-56 w-full object-cover object-top" src={data.image} alt={data.name} />
                 <div className="p-6">
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{data.description}</div>
                   <h3 className="mt-1 text-xl leading-tight font-medium text-black">{data.name}</h3>

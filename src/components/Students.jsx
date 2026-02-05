@@ -61,11 +61,11 @@ const Students = () => {
         <h2 className="text-3xl font-semibold mb-6 text-center text-indigo-700">Student Council</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { role: 'Head-Boy', name: 'Sibusiso I Ncube', grade: 'Form 4', description: 'Sibusio leads the student council with a vision to enhance student engagement and academic success.' },
-            { role: 'Head-Girl', name: 'Nontobeko Khumalo', grade: 'Form 4', description: 'Nontobeko coordinates various student initiatives and events.' },
-            { role: 'Deputy Head-Boy', name: 'Makhosi Ngwenya', grade: 'Form 3', description: 'Makhosi manages the student council\'s records and communication, ensuring smooth operations.' },
-            { role: 'Deputy Head-Girl', name: 'Brilliance Muridzo', grade: 'Form 4', description: 'Brilliance manages the student council\'s records and communication, ensuring smooth operations.' },
-            { role: 'Senior Prefect', name: 'Wendy Tawachera', grade: 'Form 3', description: 'Wendy manages the student council\'s records and communication, ensuring smooth operations.' }
+            { role: 'Head-Boy', name: 'Makhosi Ngwenya', grade: 'Form 4', description: 'Makhosi leads the student council with a vision to enhance student engagement and academic success.' },
+            { role: 'Head-Girl', name: 'Nonsikelelo Phiri', grade: 'Form 4', description: 'Nonsikelelo coordinates various student initiatives and events.' },
+            { role: 'Deputy Head-Boy', name: 'Sibusiso Tsitsane', grade: 'Form 3', description: 'Sibusiso manages the student council\'s records and communication, ensuring smooth operations.' },
+            { role: 'Deputy Head-Girl', name: 'Wendy Tawachera', grade: 'Form 4', description: 'Wendy manages the student council\'s records and communication, ensuring smooth operations.' },
+            { role: 'Student Councilor', name: 'Hillary Mpofu', grade: 'Form 3', description: 'Hillary manages the student council\'s records and communication, ensuring smooth operations.' }
           ].map((member, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-xl font-semibold text-indigo-700 mb-2">{member.role}</h3>

@@ -45,6 +45,7 @@ export {default as her} from './her.jpg';
 export {default as principal} from './principal.jpg';  
 export {default as geo} from './geo.jpg';  
 export {default as eng} from './eng.jpg';  
+export {default as fars} from './fars.jpg';  
 export {default as lit} from './lit.jpg';  
 export {default as math} from './math.jpg';  
 export {default as sci} from './sci.jpg';
