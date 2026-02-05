@@ -57,7 +57,7 @@ function Footer() {
         </div>
       </section>
       <div className="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
-        © 2025 Amazon Christian Academy. All rights reserved.
+        © {new Date().getFullYear()}  Amazon Christian Academy. All rights reserved.
       </div>
     </footer>
   );

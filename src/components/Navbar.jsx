@@ -20,7 +20,7 @@ function Navbar() {
   // Menu links
   const links = [
     { href: '/', label: 'HOME' },
-    { href: '/aboutus', label: 'ABOUT US' },
+    { href: '/about', label: 'ABOUT US' },
     { href: '/faculty', label: 'FACULTY' },
     { href: '/students', label: 'STUDENTS' },
     { href: '/events', label: 'EVENTS' },
@@ -49,7 +49,7 @@ function Navbar() {
                 alt=""
                 className="navbar-brand rounded-full object-fill w-[50px] lg:w-[80px]"
               />
-              <div className="flex-col justify-center hidden lg:flex">
+              <div className="show-above-1024">
                 <span className="font-bold">Amazon Christian Academy</span>
                 <span className="small text-gray-500">Filabusi, Insiza District</span>
               </div>

@@ -3,7 +3,6 @@ export {default as AboutPrograms} from './AboutPrograms.jsx';
 export {default as Campus} from './Campus.jsx';
 export {default as Checkout} from './Checkout.jsx';
 export {default as Contact} from './Contact.jsx';
-export {default as College} from './About.jsx'
 export {default as Coursoul} from './Coursoul.jsx';
 export {default as Curriculum} from './Curriculum.jsx';
 export {default as Events} from './Events.jsx';

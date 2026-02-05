@@ -12,11 +12,11 @@ function Contact() {
     e.preventDefault();
 
     try {
-       await emailjs.sendForm(
-        "service_jdydgdx",   // Replace with your EmailJS service ID
-        "template_isq55fy",  
+      await emailjs.sendForm(
+        "service_jdydgdx", // Replace with your EmailJS service ID
+        "template_isq55fy",
         form.current,
-        "jrIGv6A_SlTCeYJXj"    
+        "jrIGv6A_SlTCeYJXj"
       );
 
       alert("Message sent successfully!");
@@ -35,39 +35,42 @@ function Contact() {
         style={{ backgroundImage: `url(${carousel1})` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="container mx-auto px-6 mt-5 lg:mt-0 lg:mb-0 mb-5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-5 lg:mt-0 lg:mb-0 mb-5">
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="bg-white bg-opacity-95 max-w-2xl mx-auto p-10 rounded-3xl shadow-2xl transform hover:scale-105 transition duration-300"
+              className="bg-white bg-opacity-95 max-w-full sm:max-w-lg md:max-w-xl mx-auto p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl transform hover:scale-105 transition duration-300"
             >
-              <h2 className="text-5xl font-extrabold mb-8 text-center text-blue-800 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 sm:mb-8 text-center text-blue-800 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                 Contact Us
               </h2>
+
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="w-full p-4 mb-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                required
+                className="w-full p-3 sm:p-4 mb-4 sm:mb-5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-sm sm:text-base"
               />
+
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email Address"
-                className="w-full p-4 mb-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                className="w-full p-3 sm:p-4 mb-4 sm:mb-5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-sm sm:text-base"
                 required
               />
+
               <textarea
                 name="message"
                 placeholder="Your Message"
-                className="w-full p-4 mb-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                rows="5"
+                className="w-full p-3 sm:p-4 mb-4 sm:mb-5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-sm sm:text-base"
+                rows="4"
                 required
               ></textarea>
+
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-blue-500 to-teal-400 text-white rounded-lg shadow-lg hover:from-blue-600 hover:to-teal-500 transition duration-300 text-lg font-semibold transform hover:scale-105"
+                className="w-full py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-teal-400 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-teal-500 transition duration-300 text-base sm:text-lg font-semibold transform hover:scale-105"
               >
                 Send Message
               </button>
@@ -129,6 +132,7 @@ function Contact() {
               <a
                 href="https://i.pinimg.com/474x/88/6c/72/886c729c5e6310e29e269031d73a5625.jpg"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-400 text-white rounded-full hover:from-blue-600 hover:to-teal-500 transition duration-300 transform hover:scale-105"
               >
                 <GetApp className="mr-2" />

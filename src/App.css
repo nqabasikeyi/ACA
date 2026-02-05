@@ -62,3 +62,15 @@
 .parallax-container:hover .parallax-bg {
   transform: translate3d(0, -60%, 0); 
 }
+
+.show-above-1024 {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .show-above-1024 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
