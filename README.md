@@ -17,7 +17,7 @@ Follow these steps to set up and run the project on your local machine.
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/NqabaXO/ACA.git
+git clone https://github.com/Nqabasikeyi/ACA.git
 cd your-repository
 ```
 
@@ -75,6 +75,7 @@ The contact form uses [EmailJS](https://www.emailjs.com/) for sending emails. En
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A fast build tool for modern web projects.
 - **Tailwind CSS**: A utility-first CSS framework for designing beautiful interfaces.
+
 
 
 
