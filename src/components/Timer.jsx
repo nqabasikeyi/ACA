@@ -14,7 +14,7 @@ function Timer() {
           </span>
           <span className='text-lg hidden lg:block overflow-y-hidden lg:text-4xl lg:w-[400px] w-auto font-bold'>
           Amazon Christian Academy <br />
-          Annual Speech and Accolades Day
+          5 Year Anniversary
           </span>
         </div>
         <div className='flex justify-start items-center'>
@@ -27,3 +27,4 @@ function Timer() {
 }
 
 export default Timer
+
