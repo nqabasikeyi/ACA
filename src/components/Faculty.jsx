@@ -121,13 +121,6 @@ const aboutData = [
     
   },
   {
-    name: "Mr N Ncube",
-    description: "Computer Science Teacher",
-    image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
-    quote: "Computer Science is the engine of innovation. Let’s code the future and solve tomorrow’s problems today.",
-    
-  },
-  {
     name: "Mr N J Sikeyi",
     description: "Computer Science Teacher",
     image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 

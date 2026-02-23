@@ -39,23 +39,13 @@ function Footer() {
                 >
                   <FaTiktok size={20} />
                 </a>
-
-                <a
-                  href=""
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-blue-500"
-                >
-                  <TwitterIcon fontSize="small" />
-                </a>
-
                 <a
                   href="https://www.facebook.com/profile.php?id=61566837965521"
                   target="_blank"
                   rel="noreferrer"
                   className="text-blue-700"
                 >
-                  <FacebookIcon fontSize="small" />
+                  <FacebookIcon fontSize="medium" />
                 </a>
               </div>
             </div>

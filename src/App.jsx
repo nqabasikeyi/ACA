@@ -53,13 +53,13 @@ function App() {
               <>
                 <Helmet>
                   <title>Amazon Christian Academy | Home</title>
-                  <meta name="description" content="Welcome to Amazon Christian Academy. Home of the Lions. Join us for our annual speech and accolades day." />
+                  <meta name="description" content="Welcome to Amazon Christian Academy. Home of the Lions. Join us for our 5 year anniversary celebration." />
                 </Helmet>
 
                 <Coursoul />
                 <Marquee text={`"Welcome to Amazon Christian Academy, Home Of The Lions."`} />
                 <Timer />
-                <Marquee text={`"Join us for our Annual Speech and Accolades Day"`} />
+                <Marquee text={`"Join us in celebrating our 5 year anniversary!"`} />
                 <AboutPrograms />
                 <Main1 />
               </>
@@ -79,8 +79,8 @@ function App() {
 
                 <Faculty />
                 <Main2 />
-                <Checkout />
-                <Main3 />
+                
+                
               </>
             }
           />
@@ -113,7 +113,7 @@ function App() {
                 </Helmet>
 
                 <Campus />
-                <Main2 />
+                <Main3 />
               </>
             }
           />
@@ -130,10 +130,8 @@ function App() {
                 </Helmet>
 
                 <Events />
-                <Main2 />
-                <Checkout />
-                <Main1 />
-                <Main3 />
+                
+                
               </>
             }
           />
@@ -151,7 +149,6 @@ function App() {
 
                 <Curriculum />
                 <Main2 />
-                <Checkout />
               </>
             }
           />
