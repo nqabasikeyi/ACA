@@ -43,8 +43,8 @@ const Students = () => {
               { name: 'Admire Nkala', achievement: 'Best Performing Student in ZIMSEC Ordinary Level Examinations (November 2025)' },
               { name: 'Sositina Vheremu', achievement: 'Gold Medalist – Provincial Athletics (2025)' },
               { name: 'Mthabisi Ncube', achievement: 'Gold Medalist – Provincial Chess Championship (2025)' },
-              { name: 'Hillary Mpofu', achievement: 'First Place – POTRAZ Letter Writing Competition (2025)' },
-              { name: 'Nontobeko Khumalo', achievement: 'First Place – POTRAZ Letter Writing Competition (2024)' },
+              { name: 'Hillary Mpofu', achievement: 'First Place – POTRAZ Letter Writing Competition MAT-SOUTH (2025)' },
+              { name: 'Nontobeko Khumalo', achievement: 'First Place – POTRAZ Letter Writing Competition MAT-SOUTH (2024)' },
               { name: 'Bongiwe Sibanda', achievement: 'First Place – Provincial Darts Competition (2024)' },
             ].map((item, index) => (
               <li key={index} className="flex items-center">
