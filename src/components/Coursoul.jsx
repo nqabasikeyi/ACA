@@ -1,7 +1,5 @@
 import React from 'react'
-import carousel1 from '../assets/carousel1.jpg'
-import carousel2 from '../assets/carousel2.jpg'
-import carousel3 from '../assets/carousel3.jpg'
+import { carousel1, carousel2, carousel3,carousel4 } from '../assets'
 function Coursoul() {
   return (
 
@@ -18,6 +16,21 @@ function Coursoul() {
                 
                 </h1>
                 <h4 className='lg:text-xl text-lg  text-light  mt-3 font-bold'>Preparing Students for Life Both Globally and Eternally.</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="carousel-item " style={{ backgroundImage: `url(${carousel4})`, backgroundRepeat: "none", backgroundPosition: "center", backgroundSize: "cover" }}>
+          <div className='h-[25rem] lg:h-[40rem]'>
+            <div className='bg-dark bg-opacity-50 w-100 h-100 d-flex flex-column justify-content-center align-items-center'>
+
+              <div className='  d-flex flex-column justify-content-center align-items-center '>
+
+                <h1 className='text-xl lg:text-5xl text-center fw-bold gap-2 flex flex-col lg:flex-row text-light '>
+                  <span> Class of 2025</span>
+                
+                </h1>
+                <h4 className='lg:text-xl text-sm  text-light  mt-3 font-bold'>Congratulations on your outstanding achievement. The future is yours!</h4>
               </div>
             </div>
           </div>
@@ -46,7 +59,7 @@ function Coursoul() {
                   <span>POTRAZ LETTER WRITING COMPETITION</span>
                 
                 </h1>
-                <h4 className='lg:text-xl text-sm  text-light  mt-3 font-bold'>Awarded Best School in MatSouth Letter Writing Competition in 2024 and 2025</h4>
+                <h4 className='lg:text-xl text-sm  text-light  mt-3 font-bold'>Awarded Best School in Mat-South Letter Writing Competition in 2024 and 2025</h4>
               </div>
             </div>
           </div>

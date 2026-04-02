@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import { AccessTime, LocationOn, GetApp } from "@mui/icons-material";
-import { carousel1 } from "../assets";
+import { contact_us} from "../assets";
 
 function Contact() {
   const form = useRef();
@@ -32,7 +32,7 @@ function Contact() {
       {/* Hero Section */}
       <div
         className="relative h-[90vh] bg-cover bg-center"
-        style={{ backgroundImage: `url(${carousel1})` }}
+        style={{ backgroundImage: `url(${contact_us})` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-5 lg:mt-0 lg:mb-0 mb-5">

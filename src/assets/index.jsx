@@ -1,8 +1,11 @@
-export {default as carousel} from './showcase.jpg'; 
-export {default as carousel1} from './showcase.jpg'; 
+export {default as contact_us} from './showcase.jpg'; 
+export {default as carousel1} from './carousel1.jpg'; 
 export {default as carousel2} from './carousel2.jpg'; 
 export {default as carousel3} from './carousel3.jpg'; 
+export {default as carousel4} from './carousel4.jpg'; 
 export {default as coverpage} from './coverpage.jpg';
+export {default as lion_preload} from './lion.png';
+
 
 export {default as stem} from './stem.jpg';
 export {default as athletics} from './athletics.jpg';

@@ -44,11 +44,13 @@ function Navbar() {
         <div className="lg:h-fit p-0 row navbar navbar-expand-lg d-flex bg-light">
           <div className="container-fluid">
             <span className="navbar-brand flex items-center">
+              <Link to="/">
               <img
                 src={mylogo}
                 alt=""
                 className="navbar-brand rounded-full object-fill w-[50px] lg:w-[80px]"
               />
+              </Link>
               <div className="show-above-1024">
                 <span className="font-bold">Amazon Christian Academy</span>
                 <span className="small text-gray-500">Filabusi, Insiza District</span>

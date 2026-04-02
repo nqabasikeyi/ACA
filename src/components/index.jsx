@@ -1,3 +1,4 @@
+export {default as Preloader} from './Preloader.jsx';
 export {default as About} from './About.jsx';
 export {default as AboutPrograms} from './AboutPrograms.jsx';
 export {default as Campus} from './Campus.jsx';
