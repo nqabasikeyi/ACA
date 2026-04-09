@@ -229,3 +229,198 @@
     font-size: 0.95rem;
   }
 }
+
+.student-life-section {
+  width: 100%;
+  background: #f4f4f4;
+  padding: 32px 20px 40px;
+  box-sizing: border-box;
+}
+
+.student-life-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.student-life-header h2 {
+  margin: 0;
+  font-size: clamp(24px, 3.5vw, 48px);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.light-text {
+  color: #5f5f5f;
+}
+
+.blue-text {
+  color: #32a7f3;
+  font-weight: 700;
+}
+
+.student-life-list {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.student-life-block {
+  width: 100%;
+}
+
+.student-life-grid {
+  height: 30vh;
+  min-height: 220px;
+  max-height: 320px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.gallery-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-card.normal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.gallery-card.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.gallery-card.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+/* LIGHTBOX */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(245, 245, 245, 0.96);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  width: min(92vw, 1300px);
+  height: min(86vh, 900px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: opacity 0.35s ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border: none;
+  background: transparent;
+  font-size: 56px;
+  line-height: 1;
+  cursor: pointer;
+  color: #222;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 80px;
+  line-height: 1;
+  cursor: pointer;
+  color: #222;
+  padding: 10px 18px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  transform: translateY(-50%) scale(1.08);
+  opacity: 0.75;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+/* Hide tile gallery on tablet and mobile */
+@media (max-width: 1024px) {
+  .student-life-list {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-life-section {
+    padding: 24px 12px 32px;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 42px;
+  }
+
+  .lightbox-nav {
+    font-size: 52px;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+}

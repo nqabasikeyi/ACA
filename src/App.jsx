@@ -21,6 +21,7 @@ import {
   Moto,
   Navbar,
   Students,
+  StudentLifeGallery,
   Timer
 } from './components/index.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
@@ -122,6 +123,7 @@ function App() {
                   />
                 </Helmet>
 
+                <StudentLifeGallery />
                 <Students />
               </>
             }

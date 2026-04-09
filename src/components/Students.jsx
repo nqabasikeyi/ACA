@@ -3,8 +3,7 @@
 const Students = () => {
   return (
     <div className="container mx-auto px-4 py-16 bg-gray-100">
-      <h1 className="text-5xl font-bold text-center mb-16 text-indigo-800">Student Life at Amazon Christian Academy</h1>
-
+      
      
       <section className="mb-20 bg-white rounded-xl shadow-lg p-8">
         <h2 className="text-3xl font-semibold mb-6 text-center text-indigo-700">Extracurricular Activities</h2>

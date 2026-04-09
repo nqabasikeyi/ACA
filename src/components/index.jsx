@@ -17,3 +17,4 @@ export {default as Moto} from './Moto.jsx';
 export {default as Navbar} from './Navbar.jsx';
 export {default as Students} from './Students.jsx';
 export {default as Timer} from './Timer.jsx';
+export {default as StudentLifeGallery} from './StudentLifeGallery.jsx';

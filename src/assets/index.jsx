@@ -3,6 +3,7 @@ export {default as carousel1} from './carousel1.jpg';
 export {default as carousel2} from './carousel2.jpg'; 
 export {default as carousel3} from './carousel3.jpg'; 
 export {default as carousel4} from './carousel4.jpg'; 
+export {default as carousel5} from './carousel5.jpg'; 
 export {default as coverpage} from './coverpage.jpg';
 export {default as lion_preload} from './lion.png';
 
@@ -11,7 +12,18 @@ export {default as stem} from './stem.jpg';
 export {default as athletics} from './athletics.jpg';
 export {default as arts} from './arts.jpg';
 export {default as arts1} from './arts1.jpg';
+export {default as teams} from './teams.jpg';
 export {default as biblestudy} from './biblestudy.jpg';
+export {default as athletics1} from './athletics1.jpg';
+export {default as athletics2} from './athletics2.jpg';
+export {default as athletics3} from './athletics3.jpg';
+export {default as athletics4} from './athletics4.jpg';
+export {default as athletics5} from './athletics5.jpg';
+export {default as class2025 } from './class2025.jpg';
+export {default as aleveluniform} from './aleveluniform.jpg';
+export {default as hivprevention} from './hivprevention.jpg';
+export {default as chess } from './chess.jpg';
+
 
 export {default as showcase} from './showcase.jpg';  
 export {default as showcase1} from './showcase1.jpg';  
@@ -37,6 +49,8 @@ export {default as showcase20} from './showcase20.jpg';
 export {default as school_history} from './school_history.jpg';
 
 
+
+///Teachers Images
 export {default as bes} from './bes.jpg';
 export {default as tg} from './tg.jpg';
 export {default as acc} from './acc.jpg';
