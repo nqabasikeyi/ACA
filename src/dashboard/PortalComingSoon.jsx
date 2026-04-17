@@ -11,7 +11,7 @@ const PortalComingSoon = () => {
           {/* Left Section */}
           <div className="relative px-6 py-10 sm:px-8 sm:py-12 md:px-10 md:py-14 bg-gradient-to-br from-blue-950 via-blue-800 to-blue-500  text-white flex flex-col justify-center">
             <div className="flex justify-center md:justify-start mb-6 ">
-                <img src={lion_preload} alt="🦁" className="w-full h-full object-contain p-3 text-4xl sm:text-5xl" />
+                <img src={lion_preload} alt="🦁" className="preloader__logo w-full h-full object-contain p-3 text-4xl sm:text-5xl" />
             
             </div>
 
