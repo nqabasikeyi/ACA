@@ -1,0 +1,1 @@
+export { default as PortalComingSoon } from './PortalComingSoon.jsx';

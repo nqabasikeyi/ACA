@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useEffect, useState } from 'react';
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Helmet } from 'react-helmet-async';
+import { PortalComingSoon } from './dashboard/index.jsx';
 import {
   Preloader,
   About,
@@ -143,6 +144,23 @@ function App() {
 
                 <Campus />
                 <Main3 />
+              </>
+            }
+          />
+
+          <Route 
+            path="/portal"
+            element={
+              <>
+                <Helmet>
+                  <title>Amazon Christian Academy | Portal</title>
+                  <meta
+                    name="description"
+                    content="Access the student and faculty portal for resources, information, and more."
+                  />
+                </Helmet>
+
+                <PortalComingSoon />
               </>
             }
           />

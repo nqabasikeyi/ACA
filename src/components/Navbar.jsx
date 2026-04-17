@@ -26,6 +26,7 @@ function Navbar() {
     { href: '/events', label: 'EVENTS' },
     { href: '/curriculum', label: 'ACADEMICS' },
     { href: '/campus', label: 'GLIMPSE' },
+    { href: '/portal', label: 'PORTAL' },   
     { href: '/contact', label: 'CONTACT US', isButton: true },
   ]
 
