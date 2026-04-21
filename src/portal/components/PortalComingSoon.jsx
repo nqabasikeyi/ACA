@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import lion_preload from "../assets/lion.png";
+import lion_preload from "../../assets/lion.png";
 
 const PortalComingSoon = () => {
   return (
