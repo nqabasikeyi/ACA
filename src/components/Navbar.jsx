@@ -72,26 +72,19 @@ function Navbar() {
                 relative transition-all duration-500
                 ${
                   isAtTop
-                   ? 'bg-white border-b border-gray-200'
-  : `
-    bg-black/40 backdrop-blur-xl border-b border-white/20
-    shadow-[0_10px_40px_rgba(0,0,0,0.35)]
-  `
+                    ? 'bg-white border-b border-gray-200'
+                    : `
+                      bg-black/40 backdrop-blur-xl border-b border-white/20
+                      shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+                    `
                 }
               `}
             >
               {!isAtTop && (
                 <>
-                  <>
-  {/* glass shine */}
-  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent"></div>
-
-  {/* top highlight line */}
-  <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-white/30"></div>
-
-  {/* subtle inner glow */}
-  <div className="pointer-events-none absolute inset-0 rounded-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"></div>
-</>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent"></div>
+                  <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-white/30"></div>
+                  <div className="pointer-events-none absolute inset-0 rounded-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"></div>
                   <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-white/20"></div>
                 </>
               )}
@@ -181,7 +174,7 @@ function Navbar() {
 
         {/* MOBILE NAVBAR ONLY */}
         <div className="lg:hidden">
-          <div className="h-[86px]"></div>
+          <div className="h-[82px]"></div>
 
           <div className="fixed top-0 left-0 w-full z-[100] px-3 pt-3">
             <div
@@ -200,17 +193,21 @@ function Navbar() {
 
               <Link
                 to="/"
-                className="relative z-10 flex items-center gap-3"
+                className="relative z-10 flex items-center gap-3 min-w-0"
                 onClick={() => setIsOpen(false)}
               >
                 <img
                   src={mylogo}
                   alt="Amazon Christian Academy Logo"
-                  className="w-[46px] h-[46px] object-cover"
+                  className="w-[42px] h-[42px] object-contain shrink-0"
                 />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-white font-semibold text-sm">Amazon Christian Academy</span>
-                  <span className="text-white/70 text-[11px]">Filabusi, Insiza District</span>
+                <div className="flex flex-col leading-tight min-w-0">
+                  <span className="text-white font-semibold text-[13px] truncate">
+                    Amazon Christian Academy
+                  </span>
+                  <span className="text-white/70 text-[10px] truncate">
+                    Filabusi, Insiza District
+                  </span>
                 </div>
               </Link>
 
@@ -218,26 +215,27 @@ function Navbar() {
                 onClick={toggleMenu}
                 className="
                   relative z-10 flex items-center justify-center
-                  w-12 h-12 rounded-xl
+                  w-11 h-11 rounded-xl
                   bg-white/10
                   border border-white/20
                   text-white
                   backdrop-blur-md
                   transition duration-300
                   hover:bg-white/20
+                  shrink-0
                 "
                 aria-label="Toggle menu"
               >
-                {isOpen ? <Close className="text-3xl" /> : <Menu className="text-3xl" />}
+                {isOpen ? <Close className="text-[28px]" /> : <Menu className="text-[28px]" />}
               </button>
             </div>
           </div>
 
           <div
             className={`
-              fixed top-0 left-0 w-full h-screen z-[90]
+              fixed inset-0 z-[90]
               transition-all duration-300 ease-in-out
-              ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+              ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
             `}
           >
             <div
@@ -249,18 +247,21 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             ></div>
 
-            <div className="relative h-full pt-[110px] px-6 pb-8 overflow-y-auto">
-              <ul className="flex flex-col gap-2">
+            <div className="relative h-screen flex flex-col px-4 pt-[84px] pb-4">
+              <ul className="flex-1 flex flex-col justify-center gap-2">
                 {links.map((link) => (
                   <li key={link.href} onClick={() => setIsOpen(false)}>
                     {link.isButton ? (
                       <Link
                         to={link.href}
                         className="
-                          block w-full text-center
-                          mt-4 py-4 rounded-2xl
-                          bg-white text-black font-semibold
-                          shadow-lg text-base tracking-wide
+                          flex items-center justify-center
+                          w-full h-[48px]
+                          rounded-xl
+                          bg-white text-black
+                          font-semibold text-[14px]
+                          shadow-lg
+                          text-decoration-none
                         "
                       >
                         {link.label}
@@ -269,12 +270,14 @@ function Navbar() {
                       <Link
                         to={link.href}
                         className="
-                          block w-full
-                          text-white text-[15px] font-medium
-                          px-4 py-4 rounded-2xl
+                          flex items-center justify-center
+                          w-full h-[46px]
+                          rounded-xl
                           border border-white/10
                           bg-white/5
                           backdrop-blur-md
+                          text-white text-[14px] font-medium
+                          text-decoration-none
                           hover:bg-white/10
                           transition
                         "
