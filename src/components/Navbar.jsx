@@ -85,7 +85,7 @@ function Navbar() {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent"></div>
                   <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-white/30"></div>
                   <div className="pointer-events-none absolute inset-0 rounded-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"></div>
-                  <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-white/20"></div>
+          
                 </>
               )}
 
@@ -176,10 +176,10 @@ function Navbar() {
         <div className="lg:hidden">
           <div className="h-[82px]"></div>
 
-          <div className="fixed top-0 left-0 w-full z-[100] px-3 pt-3">
+          <div className="fixed top-0 inset-x-0 z-[100] px-3 pt-3 box-border">
             <div
               className="
-                relative flex items-center justify-between
+                 relative w-full max-w-full flex items-center justify-between
                 rounded-2xl px-4 py-3
                 bg-black/40
                 backdrop-blur-xl
@@ -193,7 +193,7 @@ function Navbar() {
 
               <Link
                 to="/"
-                className="relative z-10 flex items-center gap-3 min-w-0"
+                 className="relative z-10 flex flex-1 items-center gap-3 min-w-0 overflow-hidden"
                 onClick={() => setIsOpen(false)}
               >
                 <img
@@ -247,7 +247,7 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             ></div>
 
-            <div className="relative h-screen flex flex-col px-4 pt-[84px] pb-4">
+            <div className="relative min-h-screen flex flex-col px-4 pt-[84px] pb-4 overflow-x-hidden">
               <ul className="flex-1 flex flex-col justify-center gap-2">
                 {links.map((link) => (
                   <li key={link.href} onClick={() => setIsOpen(false)}>
