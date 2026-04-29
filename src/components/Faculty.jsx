@@ -1,13 +1,13 @@
 import {fars, eng, bes,bible,math, noma, lit, her, nde, pes, acc, bio, bursar, tg, principal, geo, sci } from "../assets/index";
 
 const aboutData = [
-  /*{
+  {
     name: "Mr N K Kuchena",
     description: "Principal",
     image: principal, 
     quote: "Welcome to our school community! We are dedicated to fostering a nurturing environment that promotes academic and personal growth. Join us in making a positive impact.",
    
-  },*/
+  },
   {
   name: "Mrs P Ndlovu",
   description: "Deputy Principal",
@@ -130,7 +130,7 @@ const aboutData = [
 ];
 
 function Faculty() {
-  const principal = aboutData.find(member => member.description === "School Administrator");
+  const principal = aboutData.find(member => member.description === "principal");
   const vicePrincipal = aboutData.find(member => member.description === "Deputy Principal");
   const otherFaculty = aboutData.filter(member => member.description !== "School Administrator" && member.description !== "Deputy Principal");
 
