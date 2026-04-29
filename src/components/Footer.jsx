@@ -54,9 +54,9 @@ function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Support</h6>
               <div className="flex flex-col gap-3">
                 <p>
-                  Name: Mr Nathan Kuchena <br />
-                  Phone: +263717788812
-                </p>
+                  Name: Mrs P Ndlovu
+                <br />
+                  Phone: +263781225948              </p>
                 <p>
                   Name: Mrs N Mlangeni
                   <br />
