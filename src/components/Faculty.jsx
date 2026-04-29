@@ -1,13 +1,13 @@
 import {fars, eng, bes,bible,math, noma, lit, her, nde, pes, acc, bio, bursar, tg, principal, geo, sci } from "../assets/index";
 
 const aboutData = [
-  {
+  /*{
     name: "Mr N K Kuchena",
     description: "Principal",
     image: principal, 
     quote: "Welcome to our school community! We are dedicated to fostering a nurturing environment that promotes academic and personal growth. Join us in making a positive impact.",
    
-  },
+  },*/
   {
   name: "Mrs P Ndlovu",
   description: "Deputy Principal",
@@ -121,7 +121,7 @@ const aboutData = [
     
   },
   {
-    name: "Mr N J Sikeyi",
+    name: "Mr N T Ncube",
     description: "Computer Science Teacher",
     image: "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.webp?b=1&s=170667a&w=0&k=20&c=XKyPqI4mZGKQLoUXMqJKkJ3Ovm69rIWG-sq_UstDyY4=", 
     quote: "Computer Science is the engine of innovation. Let’s code the future and solve tomorrow’s problems today.",
@@ -130,9 +130,9 @@ const aboutData = [
 ];
 
 function Faculty() {
-  const principal = aboutData.find(member => member.description === "Principal");
+  const principal = aboutData.find(member => member.description === "School Administrator");
   const vicePrincipal = aboutData.find(member => member.description === "Deputy Principal");
-  const otherFaculty = aboutData.filter(member => member.description !== "Principal" && member.description !== "Deputy Principal");
+  const otherFaculty = aboutData.filter(member => member.description !== "School Administrator" && member.description !== "Deputy Principal");
 
   return (
     <div className='container mx-auto px-4 py-16'>
