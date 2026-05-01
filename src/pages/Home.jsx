@@ -19,9 +19,9 @@ const Home = () => {
       </Helmet>
 
       <Coursoul />
-      <Marquee text={`"Welcome to Amazon Christian Academy, Home Of The Lions."`} />
+      <Marquee text={`"Welcome to Amazon Christian Academy — where excellence thrives even in the winter season ❄️📚"`} />
       <Timer />
-      <Marquee text={`"Join us in celebrating our 5 year anniversary!"`} />
+      <Marquee text={`"Second Term is underway — Excellence, discipline, and growth in every learner"`} />
       <AboutPrograms />
       <Main1 />
     </>

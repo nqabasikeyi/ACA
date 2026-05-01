@@ -1,7 +1,23 @@
-import React, { useMemo, useEffect,useState } from "react";
-import Masonry from "react-masonry-css";
+import React, { useMemo, useEffect, useRef, useState } from "react";
 
-import {class2025,arts1, carousel5, athletics5, athletics,athletics1, athletics2, athletics3, athletics4, contact_us, showcase20, teams, showcase3, hivprevention, aleveluniform, chess, showcase17, } from "../assets/index"
+import {
+  class2025,
+  arts1,
+  carousel5,
+  athletics5,
+  athletics,
+  athletics1,
+  athletics2,
+  athletics3,
+  athletics4,
+  contact_us,
+  showcase20,
+  teams,
+  hivprevention,
+  aleveluniform,
+  chess,
+  showcase17,
+} from "../assets/index";
 
 const galleryItems = [
   { id: 1, image: contact_us, size: "tall", alt: "Students group 1" },
@@ -28,11 +44,15 @@ export default function StudentLifeGallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isFading, setIsFading] = useState(false);
 
+  const thumbnailRefs = useRef([]);
+
   const groups = useMemo(() => {
     const result = [];
+
     for (let i = 0; i < galleryItems.length; i += groupSize) {
       result.push(galleryItems.slice(i, i + groupSize));
     }
+
     return result;
   }, []);
 
@@ -45,6 +65,8 @@ export default function StudentLifeGallery() {
   };
 
   const changeSlide = (newIndex) => {
+    if (newIndex === selectedIndex) return;
+
     setIsFading(true);
 
     setTimeout(() => {
@@ -55,15 +77,19 @@ export default function StudentLifeGallery() {
 
   const showPrev = () => {
     if (selectedIndex === null) return;
+
     const newIndex =
       selectedIndex === 0 ? galleryItems.length - 1 : selectedIndex - 1;
+
     changeSlide(newIndex);
   };
 
   const showNext = () => {
     if (selectedIndex === null) return;
+
     const newIndex =
       selectedIndex === galleryItems.length - 1 ? 0 : selectedIndex + 1;
+
     changeSlide(newIndex);
   };
 
@@ -90,9 +116,35 @@ export default function StudentLifeGallery() {
     };
   }, [selectedIndex]);
 
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    thumbnailRefs.current[selectedIndex]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [selectedIndex]);
+
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    const handleScrollClose = () => {
+      closeLightbox();
+    };
+
+    window.addEventListener("wheel", handleScrollClose, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleScrollClose);
+    };
+  }, [selectedIndex]);
+
   return (
-    <section className="student-life-section">
-      <h1 className="text-4xl font-bold text-center mb-16 text-indigo-800">Student Life at Amazon Christian Academy</h1>
+    <section className="student-life-section hidden md:block">
+      <h1 className="text-4xl font-bold text-center mb-16 text-indigo-800">
+        Student Life at Amazon Christian Academy
+      </h1>
 
       <div className="student-life-list">
         {groups.map((group, groupIndex) => (
@@ -144,15 +196,39 @@ export default function StudentLifeGallery() {
             ‹
           </button>
 
-          <div
-            className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={galleryItems[selectedIndex].image}
-              alt={galleryItems[selectedIndex].alt}
-              className={`lightbox-image ${isFading ? "fade-out" : "fade-in"}`}
-            />
+          <div className="lightbox-viewer" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-content">
+              <img
+                src={galleryItems[selectedIndex].image}
+                alt={galleryItems[selectedIndex].alt}
+                className={`lightbox-image ${
+                  isFading ? "fade-out" : "fade-in"
+                }`}
+              />
+            </div>
+
+            <div className="lightbox-counter">
+              {selectedIndex + 1} / {galleryItems.length}
+            </div>
+
+            <div className="lightbox-thumbnails scrollbar-hide">
+              <div className="lightbox-thumbnails-inner">
+                {galleryItems.map((item, index) => (
+                  <button
+                    key={item.id}
+                    ref={(el) => (thumbnailRefs.current[index] = el)}
+                    type="button"
+                    onClick={() => changeSlide(index)}
+                    className={`lightbox-thumbnail ${
+                      selectedIndex === index ? "active" : ""
+                    }`}
+                    aria-label={`View ${item.alt}`}
+                  >
+                    <img src={item.image} alt={item.alt} />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           <button

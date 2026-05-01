@@ -1,3 +1,21 @@
+/* =========================================================
+   1. GLOBAL UTILITIES
+========================================================= */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   2. PARALLAX SECTION
+========================================================= */
+
 .parallax-container {
   position: relative;
   height: 40rem;
@@ -9,28 +27,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 300%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: translate3d(0, -50%, 0);
-  transition: transform 0.9s ease-out;
-}
-
-.parallax-container:hover .parallax-bg {
-  transform: translate3d(0, -60%, 0); 
-}.parallax-container {
-  position: relative;
-  height: 40rem;
-  overflow: hidden;
-}
-
-.parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300%; 
+  height: 300%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,30 +37,12 @@
 
 .parallax-container:hover .parallax-bg {
   transform: translate3d(0, -60%, 0);
-}.parallax-container {
-  position: relative;
-  height: 40rem;
-  overflow: hidden;
-}
-
-.parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: translate3d(0, -50%, 0);
-  transition: transform 0.9s ease-out;
-}
-
-.parallax-container:hover .parallax-bg {
-  transform: translate3d(0, -60%, 0); 
 }
 
 
+/* =========================================================
+   3. PRELOADER
+========================================================= */
 
 .preloader {
   position: fixed;
@@ -158,65 +137,10 @@
   animation-delay: 0.4s;
 }
 
-@keyframes lionPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.92;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-}
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  40% {
-    transform: translateY(-8px);
-    opacity: 1;
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .preloader__logo-wrapper {
-    width: 150px;
-    height: 150px;
-  }
-
-  .preloader__logo {
-    width: 125px;
-    height: 125px;
-  }
-
-  .preloader__ring {
-    width: 145px;
-    height: 145px;
-  }
-
-  .preloader__title {
-    font-size: 1.5rem;
-  }
-
-  .preloader__subtitle {
-    font-size: 0.95rem;
-  }
-}
+/* =========================================================
+   4. STUDENT LIFE GALLERY
+========================================================= */
 
 .student-life-section {
   width: 100%;
@@ -308,63 +232,130 @@
   grid-row: span 2;
 }
 
-/* LIGHTBOX */
+
+/* =========================================================
+   5. STUDENT LIFE LIGHTBOX / SLIDESHOW
+========================================================= */
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(245, 245, 245, 0.96);
   z-index: 9999;
+  background: rgba(245, 245, 245, 0.96);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.lightbox-content {
-  width: min(92vw, 1300px);
-  height: min(86vh, 900px);
+.lightbox-viewer {
+  width: 90vw;
+  max-width: 1100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.lightbox-content {
+  width: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .lightbox-image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 72vh;
   object-fit: contain;
-  transition: opacity 0.35s ease;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .fade-in {
   opacity: 1;
+  transform: scale(1);
 }
 
 .fade-out {
   opacity: 0;
+  transform: scale(0.97);
+}
+
+.lightbox-counter {
+  color: #333333;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.lightbox-thumbnails {
+  width: 100%;
+  max-width: 900px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding: 8px 10px 14px;
+}
+
+.lightbox-thumbnails-inner {
+  display: flex;
+  gap: 10px;
+  min-width: max-content;
+  justify-content: flex-start;
+}
+
+.lightbox-thumbnail {
+  width: 90px;
+  height: 58px;
+  flex-shrink: 0;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lightbox-thumbnail:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.lightbox-thumbnail.active {
+  border-color: #facc15;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.lightbox-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lightbox-close {
   position: absolute;
   top: 18px;
   right: 24px;
+  z-index: 20;
   border: none;
   background: transparent;
   font-size: 56px;
   line-height: 1;
   cursor: pointer;
-  color: #222;
+  color: #222222;
 }
 
 .lightbox-nav {
   position: absolute;
   top: 50%;
+  z-index: 20;
   transform: translateY(-50%);
   border: none;
   background: transparent;
   font-size: 80px;
   line-height: 1;
   cursor: pointer;
-  color: #222;
+  color: #222222;
   padding: 10px 18px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -382,10 +373,81 @@
   right: 20px;
 }
 
-/* Hide tile gallery on tablet and mobile */
+
+/* =========================================================
+   6. ANIMATIONS
+========================================================= */
+
+@keyframes lionPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   7. RESPONSIVE STYLES
+========================================================= */
+
 @media (max-width: 1024px) {
   .student-life-list {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .preloader__logo-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .preloader__logo {
+    width: 125px;
+    height: 125px;
+  }
+
+  .preloader__ring {
+    width: 145px;
+    height: 145px;
+  }
+
+  .preloader__title {
+    font-size: 1.5rem;
+  }
+
+  .preloader__subtitle {
+    font-size: 0.95rem;
   }
 }
 
@@ -410,5 +472,56 @@
 
   .lightbox-next {
     right: 8px;
+  }
+}
+
+/* =========================================================
+   AFRICA DAY TIMER EFFECTS
+========================================================= */
+
+.african-pattern {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.18) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.18) 75%);
+  background-size: 42px 42px;
+  background-position: 0 0, 0 21px, 21px -21px, -21px 0px;
+}
+
+.animate-soft-float {
+  animation: softFloat 7s ease-in-out infinite;
+}
+
+.animate-soft-float-delay {
+  animation: softFloat 8s ease-in-out infinite reverse;
+}
+
+.animate-count-pop {
+  animation: countPop 0.35s ease;
+}
+
+@keyframes softFloat {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(18px) translateX(14px);
+  }
+}
+
+@keyframes countPop {
+  0% {
+    transform: scale(0.94);
+  }
+
+  60% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
