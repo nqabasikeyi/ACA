@@ -202,7 +202,7 @@ function Navbar() {
                   className="w-[42px] h-[42px] object-contain shrink-0"
                 />
                 <div className="flex flex-col leading-tight min-w-0">
-                  <span className="text-white font-semibold text-[13px] truncate">
+                  <span className="text-white font-semibold text-[11px] truncate">
                     Amazon Christian Academy
                   </span>
                   <span className="text-white/70 text-[10px] truncate">
