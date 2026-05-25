@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function Timer() {
-  const targetDate = new Date("2026-05-25T00:00:00").getTime();
+  const targetDate = new Date("2026-05-29T00:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
@@ -49,7 +49,7 @@ function Timer() {
         {/* LEFT SIDE */}
         <div className="flex flex-col gap-3 text-center lg:text-left max-w-2xl">
           <span className="text-sm lg:text-base uppercase tracking-widest opacity-90">
-            Africa Day — 25 May 2026
+            Africa Day Celebrations — 29 May 2026
           </span>
 
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
