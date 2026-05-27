@@ -61,11 +61,42 @@ const Students = () => {
         <h2 className="text-3xl font-semibold mb-6 text-center text-indigo-700">Student Council</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { role: 'Head-Boy', name: 'Makhosi Ngwenya', grade: 'Form 4', description: 'Makhosi leads the student council with a vision to enhance student engagement and academic success.' },
-            { role: 'Head-Girl', name: 'Nonsikelelo Phiri', grade: 'Form 4', description: 'Nonsikelelo coordinates various student initiatives and events.' },
-            { role: 'Deputy Head-Boy', name: 'Sibusiso Tsitsane', grade: 'Form 4', description: 'Sibusiso manages the student council\'s records and communication, ensuring smooth operations.' },
-            { role: 'Deputy Head-Girl', name: 'Wendy Tawachera', grade: 'Form 4', description: 'Wendy manages the student council\'s records and communication, ensuring smooth operations.' },
-            { role: 'Student Councilor', name: 'Shekinah Dliwayo', grade: 'Form 3', description: 'Shekinah manages the student council\'s records and communication, ensuring smooth operations.' }
+   { 
+  role: 'Head-Boy', 
+  name: 'Makhosi Ngwenya', 
+  grade: 'Form 4', 
+  description: 'Makhosi provides strong leadership to the student council, encouraging discipline, teamwork, and active student participation.' 
+},
+{ 
+  role: 'Head-Girl', 
+  name: 'Nonsikelelo Phiri', 
+  grade: 'Form 4', 
+  description: 'Nonsikelelo supports student initiatives and helps create a positive, organized, and welcoming school environment.' 
+},
+{ 
+  role: 'Deputy Head-Boy', 
+  name: 'Sibusiso Tsitsane', 
+  grade: 'Form 4', 
+  description: 'Sibusiso assists in leading the student council and helps ensure that student activities and responsibilities are carried out smoothly.' 
+},
+{ 
+  role: 'Deputy Head-Girl', 
+  name: 'Wendy Tawachera', 
+  grade: 'Form 4', 
+  description: 'Wendy works closely with the student leadership team to promote cooperation, good communication, and responsible student conduct.' 
+},
+{ 
+  role: 'Student Councilor', 
+  name: 'Shekinah Dliwayo', 
+  grade: 'Form 3', 
+  description: 'Shekinah represents student interests and supports the council in promoting unity, responsibility, and active participation among learners.' 
+},
+{ 
+  role: 'Junior Member of Parliament (MP)', 
+  name: 'Simphiwe D. Ndlovu', 
+  grade: 'Form 3', 
+  description: 'Simphiwe represents the student voice through junior parliamentary leadership, promoting responsibility, confidence, and civic awareness among learners.' 
+}
           ].map((member, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-xl font-semibold text-indigo-700 mb-2">{member.role}</h3>
