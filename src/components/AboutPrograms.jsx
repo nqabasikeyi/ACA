@@ -58,7 +58,7 @@ function AboutPrograms() {
         </p>
 
         <Link
-          to="/aboutus"
+          to="/about"
           className="inline-flex items-center text-blue-700 font-medium hover:text-blue-900"
         >
           Read More About Us

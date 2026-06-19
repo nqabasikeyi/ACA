@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { About, Moto} from "../components";
+import { About, Moto, SchoolValuesBanner} from "../components";
 
 function AboutPage() {
   return (
@@ -14,6 +14,7 @@ function AboutPage() {
 
       <About />
       <Moto />
+      <SchoolValuesBanner />
     </>
   );
 }

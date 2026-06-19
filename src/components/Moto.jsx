@@ -1,61 +1,81 @@
 import React from "react";
-import { Lightbulb, Group, Gavel, Diversity3, Handshake, Diversity2, EmojiEvents } from "@mui/icons-material";
+import {
+  Lightbulb,
+  Group,
+  Gavel,
+  Diversity3,
+  Handshake,
+  EmojiEvents,
+} from "@mui/icons-material";
 
 const Moto = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white py-20">
+    <section className="bg-gradient-to-b from-blue-50 to-white py-20">
       <div className="container mx-auto px-6">
+        {/* Section heading */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6 text-blue-900">Our Vision</h1>
-          <p className="text-2xl font-semibold text-blue-700">
-            To glorify God through the training and the nurturing of students in
+          <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-3">
+            Our Foundation
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-800">
+            Our Vision
+          </h2>
+
+          <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            To glorify God through the training and nurturing of students in
             their spiritual, academic, physical, emotional, and social
             development. This is achieved through a Christ-centered education
-            based on biblical truth, which leads to the formation of the
-            character of God within. God’s character impacts wisdom, knowledge,
-            and love, helping our school community to develop a world-view that
-            will impact the world for Christ.
+            based on biblical truth, leading to the formation of Godly character,
+            wisdom, knowledge, and love.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+        {/* Core values */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {mottoItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              className="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
                   {React.cloneElement(item.icon, {
-                    className: "text-blue-600 text-3xl",
+                    className: "text-blue-600",
+                    style: { fontSize: "34px" },
                   })}
                 </div>
               </div>
+
               <h3 className="text-2xl font-bold mb-4 text-blue-800 text-center">
                 {item.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+
+              <p className="text-lg text-gray-600 leading-relaxed text-center">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="bg-white rounded-xl shadow-xl p-8">
-          <h2 className="text-3xl font-bold mb-6 text-blue-800 text-center">
+        {/* Mission */}
+        <div className="bg-white p-10 rounded-xl shadow-lg">
+          <h2 className="text-3xl font-semibold mb-6 text-blue-700 text-center">
             Our Mission
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+
+          <p className="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
             At{" "}
             <span className="font-semibold text-blue-700">
               Amazon Christian Academy
             </span>
             , our mission is to prepare students for life both globally and
-            eternally
+            eternally through quality education, Christian values, and holistic
+            development.
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -63,40 +83,38 @@ const mottoItems = [
   {
     title: "Integrity",
     description:
-      "We strive to cultivate a spirit of innovation among our students, encouraging them to think outside the box, explore new ideas, and pioneer groundbreaking solutions to real-world challenges.",
+      "We teach learners to be honest, responsible, and trustworthy in their words, actions, and decisions.",
     icon: <Lightbulb />,
   },
   {
     title: "Teamwork",
     description:
-      "We recognize the importance of teamwork in achieving collective success. Through collaborative projects and extracurricular activities, we foster a collaborative mindset among our students.",
+      "We encourage learners to work together, respect one another, and contribute positively to shared goals.",
     icon: <Group />,
   },
-  
   {
     title: "Discipline",
     description:
-      "We instill discipline as the foundation for personal and academic growth. By encouraging responsibility, time management, and self-control, we help our students build habits that lead to long-term success.",
-      icon: <Gavel/>
-  
-    },
+      "We instill self-control, responsibility, time management, and respect as foundations for personal and academic growth.",
+    icon: <Gavel />,
+  },
   {
     title: "Empathy",
     description:
-      "We cultivate empathy by teaching students to respect and understand the perspectives of others. Through service learning and inclusive activities, we promote kindness and compassion in all interactions.",
-      icon: <Diversity3/>
+      "We cultivate kindness, compassion, and understanding so that learners value the feelings and needs of others.",
+    icon: <Diversity3 />,
   },
   {
-    title: "Client Focus",
+    title: "Service",
     description:
-      "We emphasize client focus by preparing our learners to meet the needs of others with professionalism and care. Through practical experiences and problem-solving tasks, students learn to deliver value and exceed expectations.",
-      icon: <Handshake/>
+      "We prepare learners to serve others with humility, care, professionalism, and a Christ-centered attitude.",
+    icon: <Handshake />,
   },
   {
     title: "Excellence",
     description:
-      "We pursue excellence by inspiring our students to give their best in academics, sports, and personal growth. We encourage a culture of continuous improvement and high standards in everything we do.",
-      icon: <EmojiEvents/>
+      "We inspire learners to give their best in academics, sports, character, and personal development.",
+    icon: <EmojiEvents />,
   },
 ];
 

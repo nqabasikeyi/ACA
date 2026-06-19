@@ -4,6 +4,7 @@ import {
   Marquee,
   Timer,
   AboutPrograms,
+  SchoolValuesBanner,
   Main1
 } from '../components'
 
@@ -22,7 +23,10 @@ const Home = () => {
       <Marquee text={`"Welcome to Amazon Christian Academy — where excellence thrives even in the winter season ❄️📚"`} />
       <Timer />
       <Marquee text={`"Second Term is underway — Excellence, discipline, and growth in every learner"`} />
-      <AboutPrograms />
+      <SchoolValuesBanner />
+      <div className="relative z-20 -mt-24 rounded-t-[2rem] bg-white pt-10 shadow-2xl">
+  <AboutPrograms />
+</div>
       <Main1 />
     </>
   )

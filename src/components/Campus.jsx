@@ -25,6 +25,7 @@ import {
   showcase19,
   showcase20,
   arts1,
+  campus1
 } from "../assets/index";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -63,6 +64,7 @@ const Campus = () => {
     showcase18,
     showcase19,
     showcase20,
+    campus1
   ];
 
   const openImageModal = (imageUrl, index) => {
