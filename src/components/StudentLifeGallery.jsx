@@ -10,7 +10,7 @@ import {
   student_life1,
   athletics3,
   athletics4,
-  showcase1,
+  student_life3,
   showcase20,
   teams,
   student_life2,
@@ -20,7 +20,7 @@ import {
 } from "../assets/index";
 
 const galleryItems = [
-  { id: 1, image: showcase1, size: "tall", alt: "Students group 1" },
+  { id: 1, image: student_life3, size: "tall", alt: "Students group 1" },
   { id: 2, image: arts1, size: "normal", alt: "Students group 2" },
   { id: 3, image: teams, size: "wide", alt: "Students group 3" },
   { id: 4, image: carousel5, size: "normal", alt: "Students group 4" },
@@ -54,6 +54,16 @@ export default function StudentLifeGallery() {
     }
 
     return result;
+  }, []);
+
+  // This rotates the mobile preview images on every page reload.
+  // It picks a random starting image, then takes 6 images from there.
+  const mobilePreviewItems = useMemo(() => {
+    const startIndex = Math.floor(Math.random() * galleryItems.length);
+
+    return Array.from({ length: 6 }, (_, index) => {
+      return galleryItems[(startIndex + index) % galleryItems.length];
+    });
   }, []);
 
   const openLightbox = (index) => {
@@ -141,44 +151,107 @@ export default function StudentLifeGallery() {
   }, [selectedIndex]);
 
   return (
-    <section className="student-life-section hidden md:block">
-      <h1 className="text-4xl font-bold text-center mb-16 text-indigo-800">
-        Student Life at Amazon Christian Academy
-      </h1>
+    <>
+      {/* Mobile version only */}
+      <section className="mobile-student-life-section md:hidden">
+        <div className="mobile-student-life-container">
+          <h1 className="text-4xl font-bold text-center mb-16 text-indigo-800">
+            Student Life at Amazon Christian Academy
+          </h1>
 
-      <div className="student-life-list">
-        {groups.map((group, groupIndex) => (
-          <div className="student-life-block" key={groupIndex}>
-            <div className="student-life-grid">
-              {group.map((item) => {
-                const originalIndex = galleryItems.findIndex(
-                  (galleryItem) => galleryItem.id === item.id
-                );
+          <div className="mobile-student-life-grid">
+            {mobilePreviewItems.map((item, index) => {
+              const originalIndex = galleryItems.findIndex(
+                (galleryItem) => galleryItem.id === item.id
+              );
 
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    className={`gallery-card ${item.size}`}
-                    onClick={() => openLightbox(originalIndex)}
-                    aria-label={`Open ${item.alt}`}
-                    title={item.alt}
-                  >
-                    <img src={item.image} alt={item.alt} loading="lazy" />
-                  </button>
-                );
-              })}
-            </div>
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`mobile-student-life-card ${
+                    index === 0 ? "feature" : ""
+                  } ${index === 3 ? "wide" : ""}`}
+                  onClick={() => openLightbox(originalIndex)}
+                  aria-label={`Open ${item.alt}`}
+                  title={item.alt}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              );
+            })}
           </div>
-        ))}
-      </div>
 
+          <button
+            type="button"
+            className="mobile-student-life-btn"
+            onClick={() => {
+              const firstPreviewIndex = galleryItems.findIndex(
+                (galleryItem) => galleryItem.id === mobilePreviewItems[0].id
+              );
+
+              openLightbox(firstPreviewIndex);
+            }}
+          >
+            View all
+          </button>
+        </div>
+      </section>
+
+      {/* Desktop version */}
+      <section className="student-life-section hidden md:block">
+        <h1 className="text-4xl font-bold text-center mb-16 text-indigo-800">
+          Student Life at Amazon Christian Academy
+        </h1>
+
+        <div className="student-life-list">
+          {groups.map((group, groupIndex) => (
+            <div className="student-life-block" key={groupIndex}>
+              <div className="student-life-grid">
+                {group.map((item) => {
+                  const originalIndex = galleryItems.findIndex(
+                    (galleryItem) => galleryItem.id === item.id
+                  );
+
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      className={`gallery-card ${item.size}`}
+                      onClick={() => openLightbox(originalIndex)}
+                      aria-label={`Open ${item.alt}`}
+                      title={item.alt}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Shared lightbox for both mobile and desktop */}
       {selectedIndex !== null && (
         <div className="lightbox-overlay" onClick={closeLightbox}>
           <button
             type="button"
             className="lightbox-close"
-            onClick={closeLightbox}
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
             aria-label="Close slideshow"
           >
             ×
@@ -224,7 +297,12 @@ export default function StudentLifeGallery() {
                     }`}
                     aria-label={`View ${item.alt}`}
                   >
-                    <img src={item.image} alt={item.alt} />
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </button>
                 ))}
               </div>
@@ -244,6 +322,6 @@ export default function StudentLifeGallery() {
           </button>
         </div>
       )}
-    </section>
+    </>
   );
 }

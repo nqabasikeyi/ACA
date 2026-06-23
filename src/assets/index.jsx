@@ -66,6 +66,7 @@ export {default as chess } from './student-life/chess.jpg';
 export {default as athletics2} from './student-life/athletics2.jpg';
 export {default as student_life1} from './student-life/student_life1.jpg';
 export {default as student_life2} from './student-life/student_life2.jpg';
+export {default as student_life3} from './student-life/student_life3.jpg';
 
 ///campus Showcaase Images
 export {default as carousel5} from './campus/carousel5.jpg';

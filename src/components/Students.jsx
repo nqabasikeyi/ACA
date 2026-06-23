@@ -86,7 +86,7 @@ const Students = () => {
   description: 'Wendy works closely with the student leadership team to promote cooperation, good communication, and responsible student conduct.' 
 },
 { 
-  role: 'Junior Councilor', 
+  role: 'Ward 16 Councilor', 
   name: 'Shekinah Dliwayo', 
   grade: 'Form 3', 
   description: 'Shekinah represents student interests and supports the council in promoting unity, responsibility, and active participation among learners.' 
