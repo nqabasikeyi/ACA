@@ -51,6 +51,7 @@ export {default as math} from './faculty/math.jpg';
 export {default as sci} from './faculty/sci.jpg';
 export {default as bible} from './faculty/bible.jpg';
 export {default as noma} from './faculty/noma.jpg';
+export {default as com_sci} from './faculty/com_sci.jpg';
 
 ///Student-Life Images
 export {default as aleveluniform} from './student-life/aleveluniform.jpg';
