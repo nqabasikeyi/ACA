@@ -35,7 +35,7 @@ const galleryItems = [
   { id: 12, image: athletics, size: "normal", alt: "2026 Provincial Basketball Competition" },
   { id: 13, image: chess, size: "normal", alt: "2026 Provincial Chess Competition" },
   { id: 14, image: class2025, size: "wide", alt: "2025 O Level Prom" },
-  { id: 15, image: student_life2, size: "normal", alt: "Technical Drawing Class" },
+  { id: 15, image: student_life2, size: "normal", alt: "2026 Technical Drawing Class" },
   { id: 16, image: student_life4, size: "wide", alt: "2026 African Science Buskers" },
 ];
 
