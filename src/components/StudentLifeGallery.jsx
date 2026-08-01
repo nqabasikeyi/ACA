@@ -17,25 +17,26 @@ import {
   aleveluniform,
   chess,
   showcase17,
+  student_life4
 } from "../assets/index";
 
 const galleryItems = [
-  { id: 1, image: student_life3, size: "tall", alt: "Students group 1" },
-  { id: 2, image: arts1, size: "normal", alt: "Students group 2" },
-  { id: 3, image: teams, size: "wide", alt: "Students group 3" },
-  { id: 4, image: carousel5, size: "normal", alt: "Students group 4" },
-  { id: 5, image: aleveluniform, size: "tall", alt: "Students group 5" },
-  { id: 6, image: athletics1, size: "wide", alt: "Students group 6" },
-  { id: 7, image: student_life1, size: "wide", alt: "Students group 7" },
-  { id: 8, image: showcase17, size: "wide", alt: "Students group 8" },
-  { id: 9, image: athletics3, size: "normal", alt: "Students group 9" },
-  { id: 10, image: athletics4, size: "normal", alt: "Students group 10" },
-  { id: 11, image: showcase20, size: "normal", alt: "Students group 11" },
-  { id: 12, image: athletics, size: "normal", alt: "Students group 12" },
-  { id: 13, image: chess, size: "normal", alt: "Students group 13" },
-  { id: 14, image: class2025, size: "wide", alt: "Students group 14" },
-  { id: 15, image: student_life2, size: "normal", alt: "Students group 15" },
-  { id: 16, image: athletics5, size: "wide", alt: "Students group 16" },
+  { id: 1, image: student_life3, size: "tall", alt: "2026 Junior Councilor and MP" },
+  { id: 2, image: arts1, size: "normal", alt: "2025 Culture Day" },
+  { id: 3, image: teams, size: "wide", alt: "2026 Girls Soccer Team" },
+  { id: 4, image: carousel5, size: "normal", alt: "2026 Girls Debate Team" },
+  { id: 5, image: aleveluniform, size: "tall", alt: "2026 A-Level Uniform" },
+  { id: 6, image: athletics1, size: "wide", alt: "2026 First Aid Club" },
+  { id: 7, image: student_life1, size: "wide", alt: "2026 Vintage Day" },
+  { id: 8, image: showcase17, size: "wide", alt: "2025 Breast Cancer Awareness Day" },
+  { id: 9, image: athletics3, size: "normal", alt: "2026 Inter House High Jump Finals" },
+  { id: 10, image: athletics4, size: "normal", alt: "2026 Inter House ShortPut " },
+  { id: 11, image: showcase20, size: "normal", alt: "2024 Community Clean-Up Day" },
+  { id: 12, image: athletics, size: "normal", alt: "2026 Provincial Basketball Competition" },
+  { id: 13, image: chess, size: "normal", alt: "2026 Provincial Chess Competition" },
+  { id: 14, image: class2025, size: "wide", alt: "2025 O Level Prom" },
+  { id: 15, image: student_life2, size: "normal", alt: "Technical Drawing Class" },
+  { id: 16, image: student_life4, size: "wide", alt: "2026 African Science Buskers" },
 ];
 
 const groupSize = 10;
