@@ -65,7 +65,7 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/curriculum" element={<CurriculumPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/portal" element={<PortalLandingPage />} />
+          <Route path="/portal" element={<PortalLogin />} />
         </Route>
 
         {/* PORTAL */}
